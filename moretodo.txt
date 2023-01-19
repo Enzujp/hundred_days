@@ -1,3 +1,4 @@
 fix postgres database, find a new port
 
 add a nav bar and some basic design for base.html
+remove db.sqlite3 as database
