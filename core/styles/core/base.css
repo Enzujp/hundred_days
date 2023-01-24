@@ -1,9 +1,13 @@
-html, 
 body {
     margin: 0;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     background: #f5fafe;
     font-weight: 300;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
 header{
