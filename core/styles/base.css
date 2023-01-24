@@ -1,0 +1,11 @@
+html, 
+body {
+    margin: 0;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    background: #f5fafe;
+    font-weight: 300;
+}
+
+header{
+    background: #f5fafe;
+}
