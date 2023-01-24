@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background: #f9fafe;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #080b0f;
+}
