@@ -5,6 +5,7 @@ body {
     color: white;
 }
 
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -12,4 +13,30 @@ body {
 
 header {
     background: #080b0f;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: pink;
+}
+
+nav li {
+    margin: 1rem;
+}
+
+ul {
+    list-style: none;
 }
