@@ -14,7 +14,7 @@ h3 {
 
 
 body {
-    background: #f9fafe;
+    /* background: #f9fafe; */
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     color: white;
 }
@@ -59,3 +59,7 @@ ul {
     display: flex;
 }
 
+.body-container {
+    border: 2px solid black;
+    padding: 50px;
+}

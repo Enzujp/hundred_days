@@ -1,0 +1,3 @@
+user should be able to sign in and Signup, and choose the language they would like to learn
+they should be able to log contents on what they learned
+and perhaps comment on other people's works
