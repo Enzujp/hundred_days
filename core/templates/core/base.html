@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Enzu">
-        <title>100 days</title>
+        <title>{% block title %}{% endblock %} | 100 Days</title>
         <link rel="stylesheet" href="{% static 'core/base.css' %}">
     </head>
     
@@ -15,6 +15,14 @@
                 <h2>100 Days of</h2>
 
                 <nav>
+                    <div class="nav-search">
+                        <form method="get" action="/search/">
+                            <input type="search" name="query" placeholder="Search...">
+                            <button class="search-button">
+                                <p>go</p>
+                            </button>
+                        </form> 
+                    </div>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Signup</a></li>

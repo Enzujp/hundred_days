@@ -12,8 +12,8 @@ h3 {
     font-family: 'Century Gothic',CenturyGothic,AppleGothic,sans-serif;
 }
 
+
 body {
-    margin: 0;
     background: #f9fafe;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     color: white;
@@ -57,5 +57,5 @@ ul {
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 2rem;
 }
+
