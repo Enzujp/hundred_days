@@ -57,4 +57,5 @@ ul {
     margin: 0;
     list-style: none;
     display: flex;
+    gap: 2rem;
 }
