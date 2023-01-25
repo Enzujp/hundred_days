@@ -12,7 +12,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=50)
 
     class Meta:
-        verbose_name_plural = 'Languages'
+        verbose_name_plural = 'Categories'
     def __str__(self):
         return self.title
 
