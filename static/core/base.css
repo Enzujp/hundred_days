@@ -8,58 +8,54 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+body {
     font-family: 'Century Gothic',CenturyGothic,AppleGothic,sans-serif;
 }
 
-
-body {
-    /* background: #f9fafe; */
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    color: white;
+h1 {
+    color: #f9fafe;
 }
 
+body {
+    background: #f9fafe;
+   
+}
 
 .container {
     width: 80%;
-    margin: 0 auto;
 }
 
 header {
-    background: #080b0f;
-    position: fixed;
-    width: 100%;
+    background: #080606;
     z-index: 999;
+    text-align: center;
+    padding: 30px;
 }
 
-nav {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-}
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: pink;
-}
-
-nav li {
-    margin: 1rem;
-    
-}
-
-ul {
-    padding: 0;
+nav ul {
+    /* padding: 0; */
     margin: 0;
     list-style: none;
     display: flex;
+    justify-content: center;
 }
 
-.body-container {
-    border: 2px solid black;
-    padding: 50px;
+nav li {
+    margin: 1em;
+    display: flex;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: pink;
+}
+
+.content {
+    background-image: url(//img/bg.jpg);
+    border: 20px solid brown;
 }
