@@ -1,0 +1,6 @@
+fix postgres database, find a new port - done
+add a nav bar and some basic design for base.html - done
+remove db.sqlite3 as database - done
+create user model
+create sign up form
+create sign in form
