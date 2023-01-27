@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ category.title }}{% endblock %}
+
+{% if language.image %}
+    <div class="image">
+        <img src="{{% language.image.url %}}" alt="image of {{ language.title }}">
+    </div>
+{% endif %}
+    <h1>{{ language.title }}</h1>
+
+{% if language.description_field %}
+    <p>
+        {{ language.description_field }}
+    </p>
+{% endif %}

@@ -5,5 +5,13 @@ Welcome
 {% endblock %}
 
 {% block content %}
-
+<div class="language">
+    {% for language in languages %}
+        {% if language.image %}
+            <div class="image">
+                <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}
