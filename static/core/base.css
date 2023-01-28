@@ -59,18 +59,10 @@ a:hover {
 .beneath-header{
     display: flex;
     border: 1px solid black;
-    padding: 50px;
+    padding: 60px;
+    /* padding-bottom: 60px; */
     background-image: url("/static/img/get_cape.jpg");
     background-repeat: round;
-}
-
-
-.beneath-header h2 {
-    display: flex;
-    border: 1px solid black;
-    background: pink;
-    padding: 40px;
-    margin: 0 auto;
 }
 
 .content {
