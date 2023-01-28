@@ -30,9 +30,21 @@
         <div class="beneath-header">
         
         </div>
-        
         <div>
-            hi babay
+            <h3>Welcome Brave One, choose your language to commit to down below and
+                 I'll have you set up in a minute, or two if I'm being honest.</h2>
+
+        </div>
+        <div class="language-container">
+            <div class="language">
+                {% for language in languages %}
+                    {% if language.image %}
+                        <div class="image">
+                            <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
         </div>
 
     </body>

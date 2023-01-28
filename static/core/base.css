@@ -69,3 +69,14 @@ a:hover {
     margin: 0 auto;
     
 }
+
+
+
+.image {
+    display: flex;
+    flex-direction: column;
+}
+
+.language {
+    display: flex;
+}
