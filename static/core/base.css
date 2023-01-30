@@ -24,13 +24,14 @@ body {
 
 .container {
     width: 80%;
+    margin-left: 10px;
 }
 
 header {
-    background: #080606;
+    background: #5f3838;
     z-index: 999;
     text-align: center;
-    padding: 30px;
+    padding: 50px;
 }
 
 
@@ -39,7 +40,9 @@ nav ul {
     margin: 0;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    margin-bottom: -50px;
 }
 
 nav li {
@@ -75,8 +78,18 @@ a:hover {
 .image {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .language {
     display: flex;
+}
+
+.welcome-div {
+    /* width: %; */
+    margin: 0 auto;
+    padding: 20px;
+    /* background: ; */
+    margin-top: 50px;
 }
