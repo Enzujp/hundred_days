@@ -32,6 +32,7 @@ header {
     z-index: 999;
     text-align: center;
     padding: 50px;
+    border-radius: 10px;
 }
 
 
@@ -84,6 +85,8 @@ a:hover {
 
 .language {
     display: flex;
+    max-width: 30%;
+    gap: 5px;
 }
 
 .welcome-div {
