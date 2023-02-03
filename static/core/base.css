@@ -86,7 +86,7 @@ a:hover {
 .language {
     display: flex;
     max-width: 30%;
-    gap: 5px;
+    gap: 20px;
 }
 
 .welcome-div {
