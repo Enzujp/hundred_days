@@ -1,17 +1,27 @@
-    {% extends 'core/base.html' %}
+{% extends 'core/base.html' %}
 
-    {% block title %}
-    Welcome
-    {% endblock %}
+{% block title %} Welcome {% endblock %}
 
-    {% block content %}
-    <div class="language">
-        {% for language in languages %}
-            {% if language.image %}
-                <div class="image">
-                    <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
-                </div>
-            {% endif %}
-        {% endfor %}
+{% block content %}
+    <div class="beneath-header">
+            
+    </div>
+
+    <div class="welcome-div">
+        <h3>Welcome Brave One, choose a language to commit to and
+            I'll have you set up in a minute, or two if I'm being honest.</h3>
+
+    </div>
+
+    <div class="language-container">
+        <div class="language">
+            {% for language in languages %}
+                {% if language.image %}
+                    <div class="image">
+                        <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

@@ -51,8 +51,9 @@ nav li {
     display: flex;
 }
 
-a {
+a:link {
     color: white;
+    text-decoration: none;
 }
 
 a:hover {
@@ -75,17 +76,17 @@ a:hover {
 }
 
 
-
 .image {
     display: flex;
+    flex-wrap: wrap;    
     flex-direction: column;
-    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
 }
 
 .language {
     display: flex;
-    max-width: 30%;
+    max-width: 70%;
     gap: 20px;
 }
 

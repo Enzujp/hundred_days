@@ -19,34 +19,17 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
                         <li><a href="#">Signin</a></li>
                         <li><a href="#">Signup</a></li>
+                        <li><a href="#">My Languages</a></li>
+                        <li><a href="#">My Projects</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         
-        <div class="beneath-header">
-        
-        </div>
-
-        <div class="welcome-div">
-            <h3>Welcome Brave One, choose a language to commit to and
-                 I'll have you set up in a minute, or two if I'm being honest.</h2>
-
-        </div>
-        <div class="language-container">
-            <div class="language">
-                {% for language in languages %}
-                    {% if language.image %}
-                        <div class="image">
-                            <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
-                        </div>
-                    {% endif %}
-                {% endfor %}
-        </div>
-        </div>
+       {% block content %}
+       {% endblock %}
 
     </body>
