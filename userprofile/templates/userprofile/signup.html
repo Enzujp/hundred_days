@@ -1,15 +1,15 @@
 {% extends 'core/base.html' %}
 
-{% blocktitle %}Sign Up{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<h1>Signup</h1>
+    <h1>Signup</h1>
 
-<form method="post" action=".">
-    {% csrf_token %}
+    <form method="post" action=".">
+        {% csrf_token %}
 
-    {{ form.as_p }}
+        {{ form.as_p }}
 
-    <button>Signup</button>
-</form>
+        <button>Signup</button>
+    </form>
 {% endblock %}

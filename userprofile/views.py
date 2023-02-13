@@ -17,10 +17,10 @@ def signup(request):
 
             return redirect('index')
 
-        else:
-            form = SignUpForm
+    else:
+        form = SignUpForm
 
-        return render(request, 'userprofile/signup.html', {
-            'form': form
-        }
-        )
+    return render(request, 'userprofile/signup.html', {
+        'form': form
+    }
+    )
