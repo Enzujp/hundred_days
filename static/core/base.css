@@ -53,7 +53,6 @@ nav li {
 
 a:link {
     color: white;
-    text-decoration: none;
 }
 
 a:hover {
@@ -95,4 +94,9 @@ a:hover {
     padding: 20px;
     /* background: ; */
     margin-top: 50px;
+}
+
+.about-div {
+    max-width: 70%;
+    margin: 0 auto;
 }
