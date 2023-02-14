@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from languages.forms import SignUpForm
 from languages.models import User
+from django.contrib.auth.decorators import login_required
 
 
 def signup(request):
@@ -24,3 +25,8 @@ def signup(request):
         'form': form
     }
     )
+
+
+@login_required
+def myaccount(request):
+    return render(request, 'userprofile/myaccount.html')
