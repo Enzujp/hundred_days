@@ -24,8 +24,10 @@
                         <li><a href="{% url 'signup' %}">Sign-up</a></li>
                         <li><a href="#">My Languages</a></li>
                         <li><a href="#">My Projects</a></li>
-                        <li><a href="{% url 'myaccount' %}">My Account</a></li>
-                    </ul>
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'myaccount' %}">My Account</a></li>
+                        {% endif %}
+                        </ul>
                 </nav>
             </div>
         </header>
