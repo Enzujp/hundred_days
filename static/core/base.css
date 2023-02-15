@@ -51,14 +51,14 @@ nav li {
     display: flex;
 }
 
-a:link {
+a {
     color: white;
+    text-decoration: none;
 }
 
 a:hover {
     color: pink;
 }
-
 
 .beneath-header{
     display: flex;
