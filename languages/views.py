@@ -7,6 +7,6 @@ from languages.models import Language, User
 def cart_view(request):
     cart = LanguageCart(request)
     
-    return render(request, 'languages/language_cart_view.html', {
+    return render(request, 'languages/cart_view.html', {
         'cart': cart
     })
