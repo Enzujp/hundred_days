@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% blocktitle%}Language Cart{% endblock %}
+
+{% blockcontent %}
+    <h4>Language Cart</h4>
+    {% if cart|length %}
+    {% for item in cart %}
+        <div>
+            <img src="{{ item.language.get_thumbnail }}" alt="language chosen">
+        </div>
+{% endblock %}
