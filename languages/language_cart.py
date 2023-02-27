@@ -24,4 +24,4 @@ class LanguageCart(object):
         return sum(item['quantity'] for item in self.cart.values())
     
     def save(self):
-        
+        self.session[settings.LANGUAGE_CART_SESSION_ID] = self.cart
