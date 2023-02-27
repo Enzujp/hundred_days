@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .cart import LanguageCart
+from .cart import Cart
 from languages.models import Language, User
 
 # Create your views here.
 
 def cart_view(request):
-    cart = LanguageCart(request)
+    cart = Cart(request)
     
     return render(request, 'languages/cart_view.html', {
-        'cart': cart
-    })
+        'cart': cart }
+        )
