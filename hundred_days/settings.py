@@ -29,9 +29,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LANGUAGE_CART_SESSION_ID = 'cart'
+
+SESSION_COOKIE_AGE = 86400
+
+
 LOGIN_URL = 'signin'
 LOGIN_REDIRECT_URL = 'myaccount'
 LOGOUT_REDIRECT_URL = 'index'
+
+
 
 
 # Application definition

@@ -44,6 +44,8 @@ class Language(models.Model):
     
 class Language_detail(models.Model):
     title = models.CharField(max_length=225)
-    created_by = models.ForeignKey(User, related_name="language_details", on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, related_name="details", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    
+    language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE)
+    country = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
