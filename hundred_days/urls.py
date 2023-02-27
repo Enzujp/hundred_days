@@ -25,4 +25,6 @@ urlpatterns = [
     path('', index, name="index"),
     path('', include("userprofile.urls")),
     path('', include("languages.urls"))
+
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
