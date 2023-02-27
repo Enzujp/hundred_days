@@ -106,3 +106,10 @@ a:hover {
     background: #82c8c8;
     text-decoration: none;
 }
+
+.cart-container {
+    padding: 5px;
+    margin: 10px;
+    align-items: center;
+    background-color: rgb(81, 194, 194);
+}

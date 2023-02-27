@@ -6,8 +6,16 @@
     <h4>Language Cart</h4>
     {% if cart|length %}
     {% for item in cart %}
-        <div>
-            <img src="{{ item.language.get_thumbnail }}" alt="language chosen">
+        <div class="cart-container">
+            <div>
+                <img src="{{ item.language.get_thumbnail }}" alt="language chosen">
+            </div>
+
+            <div>
+                <h4>{{ item.language.title }}</h4>
+
+                <h4>{{ item.language.user }}</h4>
+            </div>
         </div>
     {% endfor %}
     {% endif %}
