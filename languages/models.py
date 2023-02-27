@@ -40,12 +40,42 @@ class Language(models.Model):
 
     def __str__ (self):
         return self.title
+    
+
+    def make_thumbnail(self, image, size=(300, 300)):
+        img = Image.open(image)
+        thumb_io = BytesIO
+        if img.mode in ("RGBA", "P"):
+            img = img.convert('RGB')
+        img.thumbnail(size)
+
+        img.save(thumb_io, 'JPEG', quality=85)
+        name = image.name.replace('uploads/language_images/', '')
+        thumbnail = File(thumb_io, name=image.name)
+
+        return thumbnail
+
+    def get_thumbnail(self):
+        if self.thumbnail:
+            return self.thumbnail.url
+        else:
+            if self.image:
+                self.thumbnail = self.make_thumbnail(self.image)
+                self.save()
+
+                return self.thumbnail.url
+            else:
+                return 'https://via.placeholder.com/240x240x.jpg'
+
+
+
+
 
     
 class Language_detail(models.Model):
     title = models.CharField(max_length=225)
     created_by = models.ForeignKey(User, related_name="details", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE)
-    country = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
+    language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
+    country = models.CharField(max_length=255, blank=False, default=False)
+    city = models.CharField(max_length=255, blank=True)
