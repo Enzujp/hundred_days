@@ -22,9 +22,9 @@
                         <li><a href="{% url 'signin' %}">Sign-in</a></li>
                         <li><a href="{% url 'signup' %}">Sign-up</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'cart' %}">My Languages</a></li>
                         {% if request.user.is_authenticated %}
                             <li><a href="#">My Projects</a></li>
+                            <li><a href="{% url 'cart' %}">My Languages</a></li>
                         {% endif %}
 
                         {% if request.user.is_authenticated %}

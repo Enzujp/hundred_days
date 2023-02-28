@@ -78,7 +78,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;    
     flex-direction: column;
-    max-width: 80%;
+    max-width: 60%;
     margin: 0 auto;
 }
 
