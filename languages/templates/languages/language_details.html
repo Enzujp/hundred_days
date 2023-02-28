@@ -2,15 +2,20 @@
 
 {% block title %}{{ category.title }}{% endblock %}
 
+{% block content %}
 {% if language.image %}
     <div class="image">
         <img src="{{% language.image.url %}}" alt="image of {{ language.title }}">
     </div>
 {% endif %}
-    <h1>{{ language.title }}</h1>
+    <h4>{{ language.title }}</h4>
 
-{% if language.description_field %}
-    <p>
-        {{ language.description_field }}
-    </p>
-{% endif %}
+    {% if language.description_field %}
+        <h4>
+            {{ language.description_field }}
+        </h4>
+    {% endif %}
+    
+    <a href="{% url 'add_to_cart' %}" class="cart-button">Add to Cart</a>
+    
+{% end block %}
