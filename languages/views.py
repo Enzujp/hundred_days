@@ -46,3 +46,10 @@ def category_detail(request, slug):
         'category': category,
         'languages': languages
     })
+
+def language_detail(request, category_slug, slug):
+    language = get_object_or_404(Language, slug=slug, status=Language.ACTIVE)
+
+    return render(request, 'languages/language_detail.html', {
+        'language': language
+    })
