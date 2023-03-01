@@ -138,3 +138,13 @@ a:hover {
 .category-wrapper {
     flex-wrap: wrap;
 }
+
+.category-detail {
+    padding: 5px;
+    background-color: grey;
+}
+
+.category-display-size {
+    width: 33.3%;
+    padding: 5px;
+}
