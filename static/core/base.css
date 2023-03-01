@@ -138,6 +138,7 @@ a:hover {
 .category-wrapper {
     flex-wrap: wrap;
     display: flex;
+    flex-direction: column;
 }
 
 .category-detail {
