@@ -41,3 +41,8 @@ def remove_from_cart(request, language_id):
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
     languages = Category.languages.all()
+
+    return render(request, 'languages/category_detail.html', {
+        'category': category,
+        'languages': languages
+    })

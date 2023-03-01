@@ -134,3 +134,7 @@ a:hover {
     margin: 0 auto;
     
 }
+
+.category-wrapper {
+    flex-wrap: wrap;
+}
