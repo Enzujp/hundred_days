@@ -38,3 +38,6 @@ def remove_from_cart(request, language_id):
 
     return redirect('cart_view')
 
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    languages = Category.languages.all()
