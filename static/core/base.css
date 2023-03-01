@@ -137,10 +137,10 @@ a:hover {
 
 .category-wrapper {
     flex-wrap: wrap;
+    display: flex;
 }
 
 .category-detail {
-    padding: 5px;
     background-color: grey;
 }
 
@@ -150,5 +150,6 @@ a:hover {
 }
 
 .img-structure{
+    display: flex;
     margin-bottom: 5px;
 }
