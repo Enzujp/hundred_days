@@ -8,7 +8,7 @@
     {% for item in cart %}
         <div class="cart-container">
             <div>
-                <img src="{{ item.language.get_thumbnail }}" alt="language chosen">
+                <img src="{{ item.language.get_thumbnail }}" alt="language chosen" class="language-chosen">
             </div>
 
             <div>
@@ -18,7 +18,7 @@
             </div>
 
             <div class="cart-quantity">
-                <a href="{% url 'change_quantity' item.language.id %}?action=increase" class="quantity-link"></a>
+                <a href="{% url 'change_quantity' item.language.id %}?action=increase" class="quantity-link">+</a>
             </div>
         </div>
     {% endfor %}

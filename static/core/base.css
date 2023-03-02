@@ -85,7 +85,7 @@ a:hover {
     flex-wrap: wrap;    
     flex-direction: column;
     max-width: 60%;
-    margin: 0 auto;
+    width: 5px;
 }
 
 
@@ -123,7 +123,7 @@ a:hover {
 
 .cart-container {
     padding: 5px;
-    margin: 10px;
+    margin: 5px;
     align-items: center;
     background-color: rgb(81, 194, 194);
 }
@@ -133,6 +133,7 @@ a:hover {
     padding: 5px;
     border: 2px solid black;
     background: rgb(59, 145, 145);
+    margin-top: 5px;
 }
 
 .structure-control {
@@ -164,4 +165,13 @@ a:hover {
 .search {
     margin-top: 13px;
     border-radius: 8px;
+}
+
+.language-chosen {
+    width: 20px;
+    height: 20px;
+}
+
+.description-field {
+    margin: 0 auto;
 }

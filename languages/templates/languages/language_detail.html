@@ -11,9 +11,9 @@
     <h4>{{ language.title }}</h4>
 
     {% if language.description_field %}
-        <h4>
+        <div class="description_field">
             {{ language.description_field }}
-        </h4>
+        </div>
     {% endif %}
     
     <a href="{% url 'add_to_cart' language.id %}" class="cart-button">Add to Cart</a>
