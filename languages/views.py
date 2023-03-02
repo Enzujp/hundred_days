@@ -46,7 +46,7 @@ def remove_from_cart(request, language_id):
     cart = Cart(request)
     cart.remove(language_id)
 
-    return redirect('cart_view')
+    return redirect('cart')
 
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)

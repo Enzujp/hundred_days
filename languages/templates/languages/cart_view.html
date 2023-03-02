@@ -22,7 +22,14 @@
                 {{ item.quantity }}
                 <a href="{% url 'change_quantity' item.language.id %}?action=decrease" class="quantity-link">-</a>
             </div>
+
+            <a href="{% url 'remove_from_cart' item.language.id %}" class="remove_from_cart">/*this should be an svg*/</a>
         </div>
     {% endfor %}
+
+    <hr class="break-class">
+    <strong>Your language is : </strong> {{ cart.title }}
+    {% else %}
+        <p>There are no languages in your cart</p>
     {% endif %}
 {% endblock %}
