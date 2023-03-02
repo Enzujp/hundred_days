@@ -19,6 +19,8 @@
 
             <div class="cart-quantity">
                 <a href="{% url 'change_quantity' item.language.id %}?action=increase" class="quantity-link">+</a>
+                {{ item.quantity }}
+                <a href="{% url 'change_quantity' item.language.id %}?action=decrease" class="quantity-link">-</a>
             </div>
         </div>
     {% endfor %}
