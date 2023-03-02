@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
 from .models import Language, Category
+from django.db.models import Q
 
 # Create your views here.
 
@@ -31,7 +32,16 @@ def change_quantity(request, language_id):
         cart.add(language_id, quantity, True)
 
         return redirect('cart_view')
-    
+
+def search(request):
+    query = request.GET.get('query', '')
+    languages = Language.objects.filter(status=Language.ACTIVE).filter(Q(title_icontains=query) | Q(description_field_icontains=query))
+    return render(request, 'languages/search.html', {
+        'languages': languages,
+        'query': query
+    })
+
+
 def remove_from_cart(request, language_id):
     cart = Cart(request)
     cart.remove(language_id)
