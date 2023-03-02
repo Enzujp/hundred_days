@@ -4,7 +4,7 @@ from PIL import Image
 from io import BytesIO
 from django.core.files import File
 
-# Create your models here.
+
 
 
 class Category(models.Model):
