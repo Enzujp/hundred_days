@@ -5,7 +5,7 @@
 {% block content %}
 {% if language.image %}
     <div class="image">
-        <img src="{{% language.image.url %}}" alt="image of {{ language.title }}">
+        <img src="{% language.image.url %}" alt="image of {{ language.title }}">
     </div>
 {% endif %}
     <h4>{{ language.title }}</h4>
