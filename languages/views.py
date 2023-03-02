@@ -35,7 +35,7 @@ def change_quantity(request, language_id):
 
 def search(request):
     query = request.GET.get('query', '')
-    languages = Language.objects.filter(status=Language.ACTIVE).filter(Q(title_icontains=query) | Q(description_field_icontains=query))
+    languages = Language.objects.filter(status=Language.ACTIVE).filter(Q(title__icontains=query) | Q(description_field__icontains=query))
     return render(request, 'languages/search.html', {
         'languages': languages,
         'query': query
