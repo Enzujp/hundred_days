@@ -17,6 +17,12 @@ h1 {
     color: #f9fafe;
 }
 
+.welcome-note {
+    max-width: 70%;
+    margin: 0 auto;
+    color: rgb(218, 185, 185);
+}
+
 body {
     background: #f9fafe;
    
@@ -28,7 +34,7 @@ body {
 }
 
 header {
-    background: #185252;;
+    background: #185252;
     z-index: 999;
     text-align: center;
     padding: 50px;
@@ -132,13 +138,16 @@ a:hover {
 .structure-control {
     max-width: 100%;
     margin: 0 auto;
+    background: #185252;
     
 }
 
 .category-wrapper {
     flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    max-width: 70%;
+    margin: 0 auto;
 }
 
 .category-display-size {
