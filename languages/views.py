@@ -17,7 +17,7 @@ def add_to_cart(request, language_id):
     cart = Cart(request)
     cart.add(language_id)
 
-    return redirect('cart_view')
+    return redirect('cart')
 
 def change_quantity(request, language_id):
     action = request.GET.get('action', '')
@@ -31,7 +31,7 @@ def change_quantity(request, language_id):
         cart = Cart(request)
         cart.add(language_id, quantity, True)
 
-        return redirect('cart_view')
+        return redirect('cart')
 
 def search(request):
     query = request.GET.get('query', '')

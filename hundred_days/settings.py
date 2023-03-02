@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 
 CART_SESSION_ID = 'cart'
 
-SESSION_COOKIE_AGE = 86400
+SESSION_COOKIE_AGE = 144000
+# Please note that this is 100 days in minutes
 
 
 LOGIN_URL = 'signin'
