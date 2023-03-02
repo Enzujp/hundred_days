@@ -150,3 +150,7 @@ a:hover {
     display: flex;
     margin-bottom: 5px;
 }
+
+.search {
+    margin-top: 13px;
+}

@@ -17,14 +17,16 @@
                             </div>
                         
                         <h4>{{ language.title }}</h4>
+                        {% endif     %}
                     </a>
                 </div>
             </div>
             {% endfor %}
         </div>
-    {% endif %}
 
     {% else %}
-    <h4>There are no languages of the sorts on here but you could add them to the list.</h4>
-    {% end %}
+    <div>
+        <h4>There are no languages of the sorts on here but you could add them to the list.</h4>
+    </div>
+    {% endif %}
 {% endblock %}
