@@ -141,13 +141,9 @@ a:hover {
     flex-direction: column;
 }
 
-/* .category-detail { */
-    /* background-color: grey; */
-/* } */
-
 .category-display-size {
     width: 33.3%;
-    padding: 5px;
+    display: flex;
 }
 
 .img-structure{
