@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+    <h4>Search</h4>
+    <h4>Search results for "{{ query }}"</h4>
+
+    {% if languages %}
+        <div class="category-wrapper">
+            {% for language in languages %}
+            <div class="category-display-size">
+                <div class="category-detail">
+                    <a href="{% url 'language_details' language.category.slug language.slug %}">
+                        {% if language.image %}
+                            <div class="img-structure">
+                                <img src="{{ language.image.url }}" alt="image of {{ language.title }}">
+                            </div>
+                        {% endif %}
+                        <h4>{{ language.title }}</h4>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
