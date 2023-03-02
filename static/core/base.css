@@ -149,6 +149,7 @@ a:hover {
 .img-structure{
     display: flex;
     margin-bottom: 5px;
+    height: 100px;
 }
 
 .search {
