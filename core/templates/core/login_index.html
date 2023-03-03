@@ -17,15 +17,9 @@
                 <h1>100 Days Of Code</h1>
 
                 <nav>
-                    <ul class="nav-links">                        
-                        {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'login_index' %}">Home</a></li>
-                        {% else %}
-                            <li><a href="/">Home</a></li>
-                        {% endif %}
-                            <li><a href="{% url 'cart' %}">Cart ({{cart|length}})</a></li>
-                        <li><a href="{% url 'signin' %}">Sign-in</a></li>
-                        <li><a href="{% url 'signup' %}">Sign-up</a></li>
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'cart' %}">Cart ({{cart|length}})</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
                         <div class="search">
                             <form method="get" action="/search/" class="flex items-center space-x-4 ">
@@ -37,20 +31,31 @@
                                 </button>
                             </form>
                         </div>
-                        {% if request.user.is_authenticated %}
                             <li><a href="#">My Projects</a></li>
                             <li><a href="{% url 'cart' %}">My Languages</a></li>
-                        {% endif %}
-
-                        {% if request.user.is_authenticated %}
                             <li><a href="{% url 'myaccount' %}">My Account</a></li>
-                        {% endif %}
-                        </ul>
+                            <li><a href="{% url 'logout' %}" class="logout">Logout</a></li>
+                            </ul>
                 </nav>
             </div>
         </header>
        <div class="structure-control"> 
             {% block content %}
+            <div class="beneath-header">
+            
+            </div>
+        
+            <div class="welcome-div">
+                <h3 class="welcome-note">Welcome Brave One, Sign in or Sign up and
+                    I'll have you set up in a minute, or two if I'm being honest.</h3>
+        
+            </div>
+        
+        
+        
+            <h4>{{category.title}}</h4>
+            {% include 'languages/partials/langs.html' %}
+            <!-- This code chunk was added to minimize excessive repetition and make the work neater -->
             {% endblock %}
         </div>
     </body>
