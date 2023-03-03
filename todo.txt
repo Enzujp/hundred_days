@@ -5,5 +5,5 @@ create user model - done
 create sign up form - done
 create sign in form - done
 restructure css for cart view page
-write a new boiler plate html for index display after logging in
+write a new boiler plate html for index display after logging in- done
 make add-to-cart function properly
