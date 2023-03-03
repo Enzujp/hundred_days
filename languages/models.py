@@ -83,8 +83,11 @@ class LanguageOrder(models.Model):
     city = models.CharField(max_length=225, blank=True)
 
 
+
 class LanguageOrderItem(models.Model):
     order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
     product = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
     price = models.IntegerField()
     quantity = models.IntegerField(default=1)
+    # this model seems like it exists in duplicate
+    # so I'm going to try to go through it and see if i can do without it
