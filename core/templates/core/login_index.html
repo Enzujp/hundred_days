@@ -56,7 +56,14 @@
         
             <h4>{{category.title}}</h4>
             {% include 'languages/partials/langs.html' %}
-            <!-- This code chunk was added to minimize excessive repetition and make the work neater -->
+            <!-- This code chunk above was added to minimize excessive repetition and make the work neater -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="mt-4 px-6 py-3 bg-teal-200 text-teal-800">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
             {% endblock %}
         </div>
     </body>
