@@ -14,5 +14,14 @@ def index(request):
         'languages' : languages
     })
 
+def login_index(request):
+    languages = Language.objects.filter(status=Language.ACTIVE)[0:]
+
+    return render(request, 'core/login_index', {
+        'languages': languages
+    })
+
 def about(request):
     return render(request, 'core/about.html')
+
+
