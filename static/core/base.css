@@ -65,7 +65,7 @@ a:hover {
     color: pink;
 }
 
-.beneath-header{
+.header-background-image{
     display: flex;
     border: 1px solid black;
     padding: 60px;
