@@ -122,8 +122,9 @@ a:hover {
 }
 
 .cart-container {
-    padding: 5px;
-    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
     align-items: center;
     background-color: rgb(81, 194, 194);
 }
@@ -174,6 +175,10 @@ a:hover {
 
 .description-field {
     margin: 0 auto;
+}
+
+.quantity-link {
+    color: white;
 }
 
  /* Need to work om writing the proper css for cart_view */
