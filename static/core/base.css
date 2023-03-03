@@ -130,11 +130,11 @@ a:hover {
 }
 
 
-.cart-button {
-    padding: 5px;
-    border: 2px solid black;
-    background: rgb(59, 145, 145);
-    margin-top: 5px;
+.add-to-cart {
+   display: inline-block;
+   background:rgb(81, 194, 194);
+   padding-left: 4px;
+   padding-top: 10px;
 }
 
 .structure-control {

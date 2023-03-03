@@ -1,6 +1,9 @@
 fix postgres database, find a new port - done
 add a nav bar and some basic design for base.html - done
 remove db.sqlite3 as database - done
-create user model
-create sign up form
-create sign in form
+create user model - done
+create sign up form - done
+create sign in form - done
+restructure css for cart view page
+write a new boiler plate html for index display after logging in
+make add-to-cart function properly
