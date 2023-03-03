@@ -4,6 +4,10 @@ remove db.sqlite3 as database - done
 create user model - done
 create sign up form - done
 create sign in form - done
-restructure css for cart view page
+restructure css for cart view page- done
 write a new boiler plate html for index display after logging in- done
-make add-to-cart function properly
+make add-to-cart function properly 
+create a language-checkout page 
+create a little personal library where users can log their daily workings
+deploy
+implement other changes afterwards
