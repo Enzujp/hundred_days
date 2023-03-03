@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Language, User
+from .models import LanguageOrder, User
 
 
 class SignUpForm(UserCreationForm):
@@ -42,3 +42,16 @@ class SignUpForm(UserCreationForm):
         if commit:
             user.save()
         return user
+    
+
+class LanguageOrderForm(forms.ModelForm):
+    class Meta:
+        model = LanguageOrder
+        fields = ('first_name', 'last_name', 'title', 'language', 'country', 'city')
+
+
+class LanguageForm(forms.ModelForm):
+    # please pursue train of thought here when light returns and give an hour to rest framework after
+    # creating a new coursera account with the new email
+    pass
+

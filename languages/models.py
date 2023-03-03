@@ -72,10 +72,19 @@ class Language(models.Model):
 
 
     
-class Language_detail(models.Model):
+class LanguageOrder(models.Model):
+    first_name = models.CharField(max_length=225)
+    last_name = models.CharField(max_length=225)
     title = models.CharField(max_length=225)
     created_by = models.ForeignKey(User, related_name="details", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
-    country = models.CharField(max_length=255, blank=False, default=False)
-    city = models.CharField(max_length=255, blank=True)
+    country = models.CharField(max_length=225, blank=False, default=False)
+    city = models.CharField(max_length=225, blank=True)
+
+
+class LanguageOrderItem(models.Model):
+    order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
+    product = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
+    price = models.IntegerField()
+    quantity = models.IntegerField(default=1)
