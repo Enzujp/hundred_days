@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 
 CART_SESSION_ID = 'cart'
 
+SESSION_SAVE_EVERY_REQUEST = True
+# The above code is supposed to trigger a session save after every request made.
+
+
 SESSION_COOKIE_AGE = 144000
 # Please note that this is 100 days in minutes
 
