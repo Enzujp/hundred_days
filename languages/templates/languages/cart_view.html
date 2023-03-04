@@ -5,7 +5,7 @@
 {% block content %}
     <h4>Language Cart</h4>
     {% if cart|length %}
-        {% for item in cart %}
+    {% for item in cart %}
             <div class="cart-container">
                 <div>
                     <img src="{{ item.language.get_thumbnail }}" alt="language chosen" class="language-chosen">
@@ -25,11 +25,11 @@
 
                 <a href="{% url 'remove_from_cart' item.language.id %}" class="remove_from_cart">/*this should be an svg*/</a>
             </div>
-        {% endfor %}
+    {% endfor %}
 
         <hr class="break-class">
         <strong>Your language is : </strong> {{ cart.title }}
-        {% else %}
+    {% else %}
             <p>There are no languages in your cart</p>
     {% endif %}
 {% endblock %}

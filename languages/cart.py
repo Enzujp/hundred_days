@@ -41,6 +41,7 @@ class Cart(object):
 
         self.save()
 
+
     def remove(self, language_id):
         if language_id in self.cart:
             del self.cart[(language_id)]
