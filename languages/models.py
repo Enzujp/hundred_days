@@ -86,7 +86,7 @@ class LanguageOrder(models.Model):
 
 class LanguageOrderItem(models.Model):
     order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
-    product = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
     price = models.IntegerField()
     quantity = models.IntegerField(default=1)
     # this model seems like it exists in duplicate
