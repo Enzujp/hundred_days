@@ -4,6 +4,8 @@
 
 {% block content %}
     <h4>Language Cart</h4>
+    <!-- To activate the use of cart, I had to add the context processor code line to the templates in settings
+     -->
     {% if cart|length %}
     {% for item in cart %}
             <div class="cart-container">
