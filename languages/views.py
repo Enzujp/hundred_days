@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import LanguageOrderForm
 
 
-
+# something in the cart configuration requires a fix, and I'm working on it
 def cart_view(request):
     cart = Cart(request)
     
