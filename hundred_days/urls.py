@@ -22,10 +22,10 @@ from core.views import index, about, login_index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name="about"),
+    path('', include("userprofile.urls")),
+    path('', include("languages.urls")),
     path('', index, name="index"),
     path('login_index/', login_index, name="login_index"),
-    path('', include("userprofile.urls")),
-    path('', include("languages.urls"))
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

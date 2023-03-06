@@ -7,13 +7,6 @@ from .forms import LanguageOrderForm
 
 
 # something in the cart configuration requires a fix, and I'm working on it
-def cart_view(request):
-    cart = Cart(request)
-    
-    return render(request, 'languages/cart_view.html', {
-        'cart': cart 
-        })
-
 
 def add_to_cart(request, language_id):
     cart = Cart(request)
@@ -36,6 +29,20 @@ def change_quantity(request, language_id):
 
     return redirect('cart')
 
+def remove_from_cart(request, language_id):
+    cart = Cart(request)
+    cart.remove(language_id)
+
+    return redirect('cart')
+
+
+def cart_view(request):
+    cart = Cart(request)
+    
+    return render(request, 'languages/cart_view.html', {
+        'cart': cart 
+        })
+
 
 def search(request):
     query = request.GET.get('query', '')
@@ -45,13 +52,6 @@ def search(request):
         'query': query
     })
 
-
-
-def remove_from_cart(request, language_id):
-    cart = Cart(request)
-    cart.remove(language_id)
-
-    return redirect('cart')
 
 
 @login_required
