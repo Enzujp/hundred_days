@@ -2,6 +2,10 @@ from django.conf import settings
 
 from .models import Language
 
+
+# Cart.py holds a class with nested functions that would allow users control over how many languages
+# they wish to learn, letting them add, update or remove from a self curated library.
+
 class Cart(object):
     def __init__(self, request):
         self.session = request.session
@@ -11,7 +15,6 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         
         self.cart = cart
-
 
     def __iter__(self):
         for p in self.cart.keys():
@@ -37,7 +40,7 @@ class Cart(object):
             self.cart[language_id]['quantity'] += int(quantity)
 
             if self.cart[language_id]['quantity'] == 0:
-                self.remove(language_id)
+                self.remove(language_id)    
 
         self.save()
 
