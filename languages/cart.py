@@ -21,6 +21,7 @@ class Cart(object):
             self.cart[str(p)]['language'] = Language.objects.get(pk=p)
 
         for item in self.cart.values():
+            item['total_items'] = int(item['language']) * 1
             yield item
 
     def len(self):
