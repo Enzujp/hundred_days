@@ -9,6 +9,7 @@ urlpatterns = [
     path('about/', about, name="about"),
     path('', include("userprofile.urls")),
     path('', include("languages.urls")),
+    path('', include("core.urls")),
     path('', index, name="index"),
 
     

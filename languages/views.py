@@ -73,14 +73,14 @@ def language_cart_checkout(request):
 
 
 
-def category_detail(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    languages = Category.languages.all()
+# def category_detail(request, slug):
+#     category = get_object_or_404(Category, slug=slug)
+#     languages = Category.languages.all()
 
-    return render(request, 'languages/category_detail.html', {
-        'category': category,
-        'languages': languages
-    })
+#     return render(request, 'languages/category_detail.html', {
+#         'category': category,
+#         'languages': languages
+#     })
 
 def language_detail(request, category_slug, slug):
     language = get_object_or_404(Language, slug=slug, status=Language.ACTIVE)
