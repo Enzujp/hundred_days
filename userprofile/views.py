@@ -65,6 +65,12 @@ def edit_language(request, pk):
 
 # above view would be used by user to add language
 
+def delete_language(request, pk):
+    language = Language.objects.filter(user=request.user).get(pk=pk)
+    language.status = language.DELETED
+    language.save()
+    messages.success(request, 'This language has been successfully deleted!')
+    return redirect('my_languages')
 
 def signup(request):
     if request.method == 'POST':
