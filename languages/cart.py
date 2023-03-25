@@ -21,8 +21,8 @@ class Cart(object):
             self.cart[str(p)]['language'] = Language.objects.get(pk=p)
 
         for item in self.cart.values():
-            item['total_items'] = int(item['language']) * 1
-            yield item
+            item['total_items'] = int(item['language'])
+            yield(item)
 
     def len(self):
         return sum(item['quantity'] for item in self.cart.values())

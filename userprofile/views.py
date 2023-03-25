@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.utils.text import slugify
 from django.contrib.auth import login
-from languages.forms import SignUpForm
+from languages.forms import SignUpForm,LanguageForm
 from languages.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -27,8 +28,29 @@ def my_languages_detail(request):
 
 @login_required
 
+@login_required
 def add_language(request):
-    pass
+    if request.method == 'POST':
+        form = LanguageForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            title = request.POST.get('title')
+            product = form.save(commit=False)
+            product.user = request.user
+            product.slug = slugify('title')
+            product.save()
+
+            messages.success(request, "The product was added!")
+
+            return redirect('my_store')
+    else:
+        form = LanguageForm()
+    form = LanguageForm()
+    return render (request, 'userprofile/language_form.html', {
+        'form': form,
+        'title': 'Add Language'
+    })
+
 
 # use add_product function from ecommerce app to tailor this too.
 

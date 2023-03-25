@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import LanguageOrder, User
+from .models import LanguageOrder, User, Language
 
 
 class SignUpForm(UserCreationForm):
@@ -11,7 +11,7 @@ class SignUpForm(UserCreationForm):
 
     class meta:
         model = User
-        fields = [ "firstname", "lastname", "username", "email", "password1", "password2" ]
+        fields = [ "firstname", "lastname", "username", "email", "password1", "password2", ]
 
              
         widgets = {
@@ -47,11 +47,29 @@ class SignUpForm(UserCreationForm):
 class LanguageOrderForm(forms.ModelForm):
     class Meta:
         model = LanguageOrder
-        fields = ('first_name', 'last_name', 'title', 'language', 'country', 'city')
+        fields = ('first_name', 'last_name', 'title', 'language', 'country', 'city',)
 
 
 class LanguageForm(forms.ModelForm):
-    # please pursue train of thought here when light returns and give an hour to rest framework after
-    # creating a new coursera account with the new email
-    pass
+    class Meta:
+        model = Language
+        fields = ( 'category', 'title', 'description_field', 'language', 'image',)
 
+    widgets = {
+            'category': forms.Select(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'title': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'description_field': forms.Textarea(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'language': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+        }
+    

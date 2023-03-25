@@ -28,8 +28,8 @@ class Language(models.Model):
     (DELETED, 'deleted')
     )
 
-    category = models.ForeignKey(Category, related_name="languages", on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, related_name="languages", on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, related_name="languages", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="languages", on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to="uploads/language_images", blank=True, null=True)
     slug = models.SlugField(max_length=50)
@@ -86,7 +86,4 @@ class LanguageOrder(models.Model):
 class LanguageOrderItem(models.Model):
     order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
     language = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
-    price = models.IntegerField()
     quantity = models.IntegerField(default=1)
-    # this model seems like it exists in duplicate
-    # so I'm going to try to go through it and see if i can do without it
