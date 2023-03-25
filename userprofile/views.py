@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
 from languages.forms import SignUpForm,LanguageForm
-from languages.models import User
+from languages.models import User, Language
 from django.contrib.auth.decorators import login_required
 
 
@@ -51,6 +51,17 @@ def add_language(request):
         'title': 'Add Language'
     })
 
+
+def edit_language(request, pk):
+    language = Language.objects.filter(user=request.user).get(pk=pk)
+
+    if request.method == 'POST':
+        form = LanguageForm(request.POST, request.FILES, instance=language)
+
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Your changes have been made successfully!')
+            return redirect('my_languages')
 
 # above view would be used by user to add language
 
