@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
 from languages.forms import SignUpForm,LanguageForm
-from languages.models import User, Language
+from languages.models import User, Language, LanguageOrderItem
 from django.contrib.auth.decorators import login_required
 
 
@@ -15,7 +15,12 @@ def myaccount(request):
 
 @login_required
 def my_languages(request):
-    pass
+    language = request.user.languages.exclude(status=Language.DELETED)
+    language_orders = LanguageOrderItem.objects.filter(language__user=request.user)
+    return render(request, 'userprofile/my_languages', {
+        'language': language,
+        'order_items': language_orders
+    })
 
 # use my_store function from ecommerce app to tailor this function
 
