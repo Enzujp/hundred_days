@@ -1,3 +1,18 @@
 {% extends 'core/login_index.html' %}
 
 {% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form method="post" action="." enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form_as.p }}
+        
+        <button>Submit</button>
+    </form>
+
+{% if language %}
+    <a href="{% url 'delete_language' language.pk %}" class="delete-language">Delete Language</a>
+{% endif %}
+
+{% endblock %}

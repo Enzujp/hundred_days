@@ -52,7 +52,7 @@ def add_language(request):
     })
 
 
-# use add_product function from ecommerce app to tailor this too.
+# above view would be used by user to add language
 
 
 def signup(request):
