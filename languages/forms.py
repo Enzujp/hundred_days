@@ -53,7 +53,7 @@ class LanguageOrderForm(forms.ModelForm):
 class LanguageForm(forms.ModelForm):
     class Meta:
         model = Language
-        fields = ( 'category', 'title', 'description_field', 'language', 'image',)
+        fields = ( 'category', 'title', 'description_field', 'image',)
 
     widgets = {
             'category': forms.Select(attrs={
@@ -63,9 +63,6 @@ class LanguageForm(forms.ModelForm):
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'description_field': forms.Textarea(attrs={
-                'class': 'w-full p-4 border border-gray-200'
-            }),
-            'language': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'image': forms.FileInput(attrs={
