@@ -35,10 +35,10 @@ def add_language(request):
 
         if form.is_valid():
             title = request.POST.get('title')
-            product = form.save(commit=False)
-            product.user = request.user
-            product.slug = slugify('title')
-            product.save()
+            language = form.save(commit=False)
+            language.user = request.user
+            language.slug = slugify('title')
+            language.save()
 
             messages.success(request, "The product was added!")
 
