@@ -187,24 +187,48 @@ a:hover {
  /* Need to work om writing the proper css for cart_view. */
 
  .cart-arrangement {
+    display: flex;
     margin-bottom: 30px;
     max-width: 70%;
     padding-bottom: 40px;
     padding-left: 40px;
     margin-top: 40px;
+    background: #82c8c8;
+    margin-left: 70px;
+    align-items: center;
+    gap: 2em;
  }
 
  .lang-checkout {
     display: inline-block;
     padding: 8px, 4px;
     color: white;
-    background: rgb(101, 145, 145);
+    background:#82c8c8;
     margin-bottom: 10px;
     padding: 5px;
-    margin-left: 40px; 
+    margin-left: 70px; 
 ;
  }
 
+ 
+
+
  .lang-head {
-    padding-left: 40px;
+    padding-left: 70px;
+ }
+ 
+ .lang-title {
+    margin-bottom: 10px;
+ }
+
+ .change-quantity {
+    border-radius: 0.75rem;
+    background-color: pink;
+    padding: 7px;
+    max-width: 10px;
+ }
+
+ .remove {
+    margin-top: 20px;
+    
  }
