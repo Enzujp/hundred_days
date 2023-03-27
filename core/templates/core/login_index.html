@@ -19,7 +19,7 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="{% url 'cart' %}">Cart ({{cart|length}})</a></li>
+                        <li><a href="{% url 'cart' %}">Cart ({{ cart|length }})</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
                         <div class="search">
                             <form method="get" action="/search/" class="flex items-center space-x-4 ">

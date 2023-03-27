@@ -49,6 +49,10 @@ class LanguageOrderForm(forms.ModelForm):
         model = LanguageOrder
         fields = ('first_name', 'last_name', 'title', 'language', 'country', 'city',)
 
+    widgets = {
+        
+    }
+
 
 class LanguageForm(forms.ModelForm):
     class Meta:

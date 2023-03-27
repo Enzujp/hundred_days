@@ -210,7 +210,11 @@ a:hover {
 ;
  }
 
- 
+.checkout{
+    padding: 8px;
+    background: pink;
+    color: white;
+}
 
 
  .lang-head {

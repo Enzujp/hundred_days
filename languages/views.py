@@ -57,7 +57,6 @@ def search(request):
 @login_required
 def language_cart_checkout(request):
     cart = Cart(request)
-
     if request.method == 'POST':
         form = LanguageOrderForm(request.POST)
 
@@ -70,7 +69,13 @@ def language_cart_checkout(request):
             language = item['language']
             quantity = int(item['quantity'])
             item = LanguageOrderItem.objects.create(order=order, language=language, quantity=quantity)
-
+    else:
+        LanguageOrderForm()
+ 
+    return render(request, 'languages/checkout.html', {
+        form: 'form',
+        cart: 'cart'
+    })
 
 
 # def category_detail(request, slug):
