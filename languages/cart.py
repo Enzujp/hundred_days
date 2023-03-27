@@ -35,8 +35,8 @@ class Cart(object):
         language_id = str(language_id)
 
         if language_id not in self.cart:
-            self.cart[language_id] = {'quantity': 1, 'id': language_id} # I changed quantity's value from quantity to 1
-
+            self.cart[language_id] = {'quantity': quantity, 'id': language_id} 
+            
         if update_quantity:
             self.cart[language_id]['quantity'] += int(quantity)
 

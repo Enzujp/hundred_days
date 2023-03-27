@@ -185,3 +185,7 @@ a:hover {
 }
 
  /* Need to work om writing the proper css for cart_view. */
+
+ .cart-arrangement {
+    margin-bottom: 5px;
+ }

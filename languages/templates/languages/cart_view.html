@@ -4,11 +4,19 @@
 
 {% block content %}
     <h1>Language Cart </h1>
+    {% if cart %}
     {% for item in cart %}
-        <p> 
+        <p class="cart-arrangement"> 
             <b>Title: </b>{{ item.language.title }}
+            <b>quantity: </b>{{ item.quantity }}
+            
+
+            <a href="{% url 'change_quantity' item.language.id %}?action=increase"> + </a>
+            <a href="{% url 'change_quantity' item.language.id %}?action=decrease"> - </a>
+            <a href="{% url 'remove_from_cart' item.language.id %}">Remove from Cart</a>
         </p>
     {% endfor %}
+    {% endif %}
 {% endblock %}
 
  <!-- To activate the use of cart, I had to add the context processor code line to the templates in settings
