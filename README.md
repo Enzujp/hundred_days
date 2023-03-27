@@ -8,4 +8,4 @@ Finally, the "Userprofile" app contains usercontrol logic, allowing for signups,
 
 This has been a solo project, but help is welcomed on the front-end.
 
-Author- Johnpaul
+Author- JP
