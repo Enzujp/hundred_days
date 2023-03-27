@@ -32,6 +32,7 @@ class Language(models.Model):
     user = models.ForeignKey(User, related_name="languages", on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to="uploads/language_images", blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='uploads/language_images/thumbnails', blank=True, null=True)
     slug = models.SlugField(max_length=50)
     description_field = models.TextField(null=True)
     updated_at = models.DateTimeField(auto_now=True)

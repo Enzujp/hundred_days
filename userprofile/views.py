@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
 from languages.forms import SignUpForm,LanguageForm
-from languages.models import User, Language, LanguageOrderItem
+from languages.models import Language, LanguageOrderItem
 from django.contrib.auth.decorators import login_required
 
 
