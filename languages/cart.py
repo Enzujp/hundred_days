@@ -17,11 +17,11 @@ class Cart(object):
         self.cart = cart
 
     def __iter__(self):
-        for p in self.cart.keys():
-            self.cart[str(p)]['language'] = Language.objects.get(pk=p)
+        for l in self.cart.keys():
+            self.cart[str(l)]['language'] = Language.objects.get(pk=l)
 
         for item in self.cart.values():
-            item['total_items'] = int(item['language'])
+            item['total_items'] = int(item['language']) # this is the line that has the error
             yield(item)
 
     def len(self):
@@ -35,7 +35,7 @@ class Cart(object):
         language_id = str(language_id)
 
         if language_id not in self.cart:
-            self.cart[language_id] = {'quantity': int(quantity), 'id': language_id}
+            self.cart[language_id] = {'quantity': 1, 'id': language_id} # I changed quantity's value from quantity to 1
 
         if update_quantity:
             self.cart[language_id]['quantity'] += int(quantity)
