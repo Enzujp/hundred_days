@@ -6,15 +6,15 @@
     <h1 class="lang-head">Language Cart </h1>
     {% if cart %}
     {% for item in cart %}
-        <p class="cart-arrangement"> 
+        <div class="cart-arrangement"> 
             <b>Title: </b>{{ item.language.title }}
-            <b>quantity: </b>{{ item.quantity }}
+            <P><b>quantity: </b>{{ item.quantity }}</P>
             
 
             <a href="{% url 'change_quantity' item.language.id %}?action=increase"> + </a>
             <a href="{% url 'change_quantity' item.language.id %}?action=decrease"> - </a>
-            <a href="{% url 'remove_from_cart' item.language.id %}">Remove from Cart</a>
-        </p>
+            <a href="{% url 'remove_from_cart' item.language.id %}">Remove from Cart </a>
+        </div>
     {% endfor %}
     {% endif %}
 
