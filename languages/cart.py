@@ -21,7 +21,7 @@ class Cart(object):
             self.cart[str(l)]['language'] = Language.objects.get(pk=l)
 
         for item in self.cart.values():
-            item['total_items'] = int(item['language']) # this is the line that has the error
+            #item['total_items'] = int(item['language']) # this is the line that has the error
             yield(item)
 
     def len(self):
