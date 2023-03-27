@@ -187,5 +187,14 @@ a:hover {
  /* Need to work om writing the proper css for cart_view. */
 
  .cart-arrangement {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+ }
+
+ .lang-checkout {
+    display: inline-block;
+    padding: 8px, 4px;
+    color: white;
+    background: rgb(86, 107, 107);
+    margin-bottom: 10px;
+    padding: 5px;
  }
