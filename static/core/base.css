@@ -242,3 +242,11 @@ a:hover {
     color: white;
     background: pink;
  }
+
+ .messages {
+    padding-top: 4px;
+    padding-right: 6px;
+    margin-top: 4px;
+    background-color: #82c8c8;
+    color: rgb(96, 148, 96);
+ }

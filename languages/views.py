@@ -52,6 +52,7 @@ def search(request):
         'query': query
     })
 
+
 @login_required
 def language_cart_checkout(request):
     cart = Cart(request)
@@ -75,7 +76,7 @@ def language_cart_checkout(request):
             
             cart.clear()
 
-            return redirect('my')
+            return redirect('my_languages')
     else:
         form = LanguageOrderForm()
     return render(request, 'languages/checkout.html', {
@@ -94,11 +95,11 @@ def language_detail(request, category_slug, slug):
 
 
 
-# def category_detail(request, slug):
-#     category = get_object_or_404(Category, slug=slug)
-#     languages = Category.languages.all()
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    languages = Category.languages.all()
 
-#     return render(request, 'languages/category_detail.html', {
-#         'category': category,
-#         'languages': languages
-#     })
+    return render(request, 'languages/category_detail.html', {
+        'category': category,
+        'languages': languages
+    })

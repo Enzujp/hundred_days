@@ -6,7 +6,7 @@
 {% block content %}
     <h1>Checkout</h1>
 
-    <form action="." method="post">
+    <form method="post" action=".">
         {% csrf_token %}
 
         {{ form.as_p }}

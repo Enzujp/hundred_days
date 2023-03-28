@@ -4,4 +4,18 @@
 {% block content %}
     <h1>My Languages</h1>
     
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class="messages">
+                {{ message }}
+            </h3>
+
+        {% endfor %}
+    {% endif %}
+
+    <hr>
+
+    <h2>My Languages</h2>
+
+
 {% endblock %}
