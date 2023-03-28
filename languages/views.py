@@ -75,12 +75,21 @@ def language_cart_checkout(request):
             
             cart.clear()
 
-            return redirect('myaccount')
+            return redirect('my')
     else:
         form = LanguageOrderForm()
     return render(request, 'languages/checkout.html', {
         'cart': cart,
         'form': form
+    })
+
+
+
+def language_detail(request, category_slug, slug):
+    language = get_object_or_404(Language, slug=slug, status=Language.ACTIVE)
+
+    return render(request, 'languages/language_detail.html', {
+        'language': language
     })
 
 
@@ -93,10 +102,3 @@ def language_cart_checkout(request):
 #         'category': category,
 #         'languages': languages
 #     })
-
-def language_detail(request, category_slug, slug):
-    language = get_object_or_404(Language, slug=slug, status=Language.ACTIVE)
-
-    return render(request, 'languages/language_detail.html', {
-        'language': language
-    })

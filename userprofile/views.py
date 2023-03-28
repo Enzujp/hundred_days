@@ -17,7 +17,7 @@ def myaccount(request):
 def my_languages(request):
     language = request.user.languages.exclude(status=Language.DELETED)
     language_orders = LanguageOrderItem.objects.filter(language__user=request.user)
-    return render(request, 'userprofile/my_languages', {
+    return render(request, 'userprofile/my_languages.html', {
         'language': language,
         'order_items': language_orders
     })
@@ -45,9 +45,9 @@ def add_language(request):
             language.slug = slugify('title')
             language.save()
 
-            messages.success(request, "The product was added!")
+            messages.success(request, "The language was added!")
 
-            return redirect('my_store')
+            return redirect('my_languages')
     else:
         form = LanguageForm()
     form = LanguageForm()
@@ -76,6 +76,7 @@ def delete_language(request, pk):
     language.save()
     messages.success(request, 'This language has been successfully deleted!')
     return redirect('my_languages')
+
 
 def signup(request):
     if request.method == 'POST':
