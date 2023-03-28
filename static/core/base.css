@@ -236,3 +236,9 @@ a:hover {
     margin-top: 20px;
     
  }
+
+ .checkout-button {
+    padding: 8px;
+    color: white;
+    background: pink;
+ }

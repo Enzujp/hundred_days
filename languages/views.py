@@ -52,30 +52,37 @@ def search(request):
         'query': query
     })
 
-
-
 @login_required
 def language_cart_checkout(request):
     cart = Cart(request)
+
     if request.method == 'POST':
         form = LanguageOrderForm(request.POST)
 
         if form.is_valid():
+            for item in cart:
+                language = item['language']
+                # total_price += product.price * int(item['quantity'])
+
             order = form.save(commit=False)
             order.created_by = request.user
             order.save()
-        
-        for item in cart:
-            language = item['language']
-            quantity = int(item['quantity'])
-            item = LanguageOrderItem.objects.create(order=order, language=language, quantity=quantity)
+
+            for item in cart:
+                language = item['language']
+                quantity = int(item['quantity'])
+                item = LanguageOrderItem.objects.create(order=order, language=language, quantity=quantity)
+            
+            cart.clear()
+
+            return redirect('myaccount')
     else:
-        LanguageOrderForm()
- 
+        form = LanguageOrderForm()
     return render(request, 'languages/checkout.html', {
-        form: 'form',
-        cart: 'cart'
+        'cart': cart,
+        'form': form
     })
+
 
 
 # def category_detail(request, slug):
