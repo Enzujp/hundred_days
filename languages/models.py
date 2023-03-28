@@ -42,7 +42,7 @@ class Language(models.Model):
     def __str__ (self):
         return self.title
     
-    def make_thumbnail(self, image, size=(300, 300)):
+def make_thumbnail(self, image, size=(300, 300)):
         img = Image.open(image)
         thumb_io = BytesIO()
         if img.mode in ("RGBA", "P"):
@@ -51,13 +51,13 @@ class Language(models.Model):
     
         
         img.save(thumb_io, 'JPEG', quality=85)
-        name = image.name.replace('uploads/language_images/', '')
+        name = image.name.replace('uploads/languages_images/', '')
         thumbnail = File(thumb_io, name=image.name)
 
         return thumbnail
 
 
-    def get_thumbnail(self):
+def get_thumbnail(self):
         if self.thumbnail:
             return self.thumbnail.url
         else:
