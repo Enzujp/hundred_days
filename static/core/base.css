@@ -250,3 +250,18 @@ a:hover {
     background-color: #82c8c8;
     color: rgb(96, 148, 96);
  }
+
+ .my-languages {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    gap: 100px;
+    margin: 0 auto;
+ }
+
+ .my-lang {
+    display: flex;
+    align-items: center;
+
+ }
+
