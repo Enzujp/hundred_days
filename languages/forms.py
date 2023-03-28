@@ -47,12 +47,28 @@ class SignUpForm(UserCreationForm):
 class LanguageOrderForm(forms.ModelForm):
     class Meta:
         model = LanguageOrder
-        fields = ('first_name', 'last_name', 'title', 'language', 'country', 'city',)
+        fields = ('name', 'title', 'language', 'country', 'description_field',)
 
     widgets = {
-        # need to work on this bit
-    }
-
+            'name': forms.Select(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'title': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'language': forms.Textarea(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'country': forms.FileInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'city': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'description_field': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+        }
 
 class LanguageForm(forms.ModelForm):
     class Meta:
