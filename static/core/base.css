@@ -21,7 +21,7 @@ h1 {
     max-width: 70%;
     margin: 0 auto;
     /* color: rgb(218, 185, 185); */
-    color: white;
+    color: black;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
 }
 
 header {
-    background: #1f273d;
+    background: #797d5d;
     z-index: 999;
     text-align: center;
     padding: 50px;
