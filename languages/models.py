@@ -82,6 +82,7 @@ class LanguageOrder(models.Model):
     language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
     country = models.CharField(max_length=225, blank=True)
     city = models.CharField(max_length=225, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 

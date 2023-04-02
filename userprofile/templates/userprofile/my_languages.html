@@ -29,8 +29,19 @@
 
     {% for language_order in language_orders %}
         <div class="orders">
-            {{ language_order }}
+            {{ language_order.language.id }}
         </div>
+
+        <div class="orders">
+            {{ language_order.title }}
+        </div>
+
+        <div class="orders">
+            {{ language_order.language.category }}
+        </div>
+
+    <hr>
+
     {% endfor %}
 
 {% endblock %}
