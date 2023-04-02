@@ -12,6 +12,7 @@ create a little personal library where users can log their daily workings, allow
 and maybe add a time stamp - idea conceived
 move languages checked out to my-languages
 add some html to login and signup pages and checkout pages to clean them up-
+add a day count that shows what learning day it is
 
 
 deploy

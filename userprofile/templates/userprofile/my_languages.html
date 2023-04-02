@@ -19,17 +19,17 @@
 
     <div class="my-languages">
 
-        <div style="width: 5%; margin: auto; margin-bottom: 40px; margin-top: 30px;"><strong>ID</strong></div>
+        <div class="lang-detail"><strong>ID</strong></div>
 
-        <div style="width: 5%;margin: auto; margin-bottom: 40px; margin-top: 30px;"><strong>Title</strong></div>
+        <div class="lang-detail"><strong>Title</strong></div>
         
-        <div style="width: 5%; margin: auto; margin-bottom: 40px; margin-top: 30px;"><strong>Category</strong></div>
+        <div class="lang-detail"><strong>Category</strong></div>
 
     </div>
 
     {% for language_order in language_orders %}
         <div class="orders">
-            <a href="{% url '' %}"></a>
+            {{ language_order }}
         </div>
     {% endfor %}
 

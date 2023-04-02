@@ -265,3 +265,9 @@ a:hover {
 
  }
 
+ .lang-detail {
+    width: 5%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 30px;
+ }

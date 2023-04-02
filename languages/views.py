@@ -15,7 +15,7 @@ def add_to_cart(request, language_id):
     return redirect('cart')
 
 
-def change_quantity(request, language_id):
+# def change_quantity(request, language_id):
     action = request.GET.get('action', '')
 
     if action:
@@ -71,8 +71,8 @@ def language_cart_checkout(request):
 
             for item in cart:
                 language = item['language']
-                quantity = int(item['quantity'])
-                item = LanguageOrderItem.objects.create(order=order, language=language, quantity=quantity)
+                # quantity = int(item['quantity'])
+                item = LanguageOrderItem.objects.create(order=order, language=language)
             
             cart.clear()
 
