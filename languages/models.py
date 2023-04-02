@@ -80,7 +80,7 @@ class LanguageOrder(models.Model):
     title = models.CharField(max_length=225)
     created_by = models.ForeignKey(User, related_name="details", on_delete=models.SET_NULL, null=True)
     language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
-    country = models.CharField(max_length=225, blank=False, default=False)
+    country = models.CharField(max_length=225, blank=True)
     city = models.CharField(max_length=225, blank=True)
 
 
