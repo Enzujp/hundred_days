@@ -90,3 +90,9 @@ class LanguageOrderItem(models.Model):
     order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
     language = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
+
+class Blog(models.Model):
+    day = models.IntegerField(default=1)
+    title = models.CharField(max_length=100)
+    text = models.TextField(max_length=500)
+    created_by = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, default=None)
