@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
-from languages.forms import SignupForm,LanguageForm
-from languages.models import Language, LanguageOrderItem
+from languages.forms import SignupForm,LanguageForm, BlogForm
+from languages.models import Language, LanguageOrderItem, Blog
 from django.contrib.auth.decorators import login_required
 
 
@@ -97,3 +97,18 @@ def signup(request):
         'form': form
     }
     )
+
+
+def blog(request):
+    if request.user == 'POST':
+        form = BlogForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You have successfully logged today\'s work! Well done!')
+    else:
+        form = BlogForm
+
+    return render(request, 'userprofile/blog.html', {
+        'form': form
+    })

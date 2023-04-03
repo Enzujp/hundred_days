@@ -1,0 +1,12 @@
+{% extends 'base/login_index' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+    <form action="." method="post">
+        {{ form.as_p }}
+
+        <button class="submit-button">Submit</button>
+        
+    </form>
+{% endblock %}
