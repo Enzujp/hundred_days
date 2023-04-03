@@ -27,6 +27,7 @@
 
     </div>
 
+    {% if language_order %}
     {% for language_order in language_orders %}
         <div class="orders">
             {{ language_order.language.id }}
@@ -44,4 +45,9 @@
 
     {% endfor %}
 
+    {% else %}
+    <hr>
+    <p>You currently have no languages in your library to work on...</p>
+    <p>Languages would appear abov when you add them to your list of languages!</p>
+    {% endif %}
 {% endblock %}

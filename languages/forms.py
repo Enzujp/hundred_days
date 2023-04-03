@@ -4,21 +4,22 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import LanguageOrder, User, Language
 
 
-class SignUpForm(UserCreationForm):
+class SignupForm(UserCreationForm):
     email = forms.EmailField(required=True)
     first_name = forms.TextInput()
     last_name = forms.TextInput()
 
-    class meta:
+    class Meta:
         model = User
-        fields = [ "firstname", "lastname", "username", "email", "password1", "password2", ]
+        fields = ( "first_name", "last_name", "username", "email", "password1", "password2")
 
-             
+
+        
         widgets = {
-            'firstname': forms.TextInput(attrs={
+            'first_name': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
-            'lastname': forms.TextInput(attrs={
+            'last_ name': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'username': forms.TextInput(attrs={
@@ -35,14 +36,15 @@ class SignUpForm(UserCreationForm):
 
 
     def save(self, commit=True):
-        user = super(SignUpForm, self).save(commit=False)
-        user.firstname = self.cleaned_data['first_name']
-        user.lastname = self.cleaned_data['last_name']
+        user = super(SignupForm, self).save(commit=False)
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
         if commit:
             user.save()
         return user
-    
+
+
 
 class LanguageOrderForm(forms.ModelForm):
     class Meta:

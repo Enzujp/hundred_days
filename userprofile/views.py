@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
-from languages.forms import SignUpForm,LanguageForm
+from languages.forms import SignupForm,LanguageForm
 from languages.models import Language, LanguageOrderItem
 from django.contrib.auth.decorators import login_required
 
@@ -80,7 +80,7 @@ def delete_language(request, pk):
 
 def signup(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = SignupForm(request.POST)
 
         if form.is_valid():
             user = form.save()
@@ -91,7 +91,7 @@ def signup(request):
             return redirect('index')
 
     else:
-        form = SignUpForm
+        form = SignupForm
 
     return render(request, 'userprofile/signup.html', {
         'form': form
