@@ -9,6 +9,8 @@
         {% endfor %}
     {% endif %}
 
+    {% for blog in blogs %}
+
     <div class="create-blog content">
         <form action="/blogs" method="POST">
             {% csrf_token %}

@@ -95,4 +95,4 @@ class Blog(models.Model):
     day = models.IntegerField(default=1)
     title = models.CharField(max_length=100)
     text = models.TextField(max_length=500)
-    created_by = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, default=None)
+    author = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, default=None)
