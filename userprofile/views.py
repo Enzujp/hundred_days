@@ -99,7 +99,8 @@ def signup(request):
     )
 
 
-def blog(request):
+def blogs(request):
+    blogs = Blog.objects.all()
     if request.user == 'POST':
         form = BlogForm(request.POST)
 
@@ -110,5 +111,10 @@ def blog(request):
         form = BlogForm
 
     return render(request, 'userprofile/blog.html', {
-        'form': form
+        'form': form,
+        'blogs': blogs
+
     })
+
+
+# need to find a way to sort out the issue with the blogs
