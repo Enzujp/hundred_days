@@ -100,19 +100,19 @@ def signup(request):
 
 
 def blogs(request):
-    blog = Blog.objects.all()
-    # if request.user == 'POST':
-    #     form = BlogForm(request.POST)
+    blogs = Blog.objects.all()
+    if request.user == 'POST':
+        form = BlogForm(request.POST)
 
-    #     if form.is_valid():
-    #         form.save()
-    #         messages.success(request, 'You have successfully logged today\'s work! Well done!')
-    # else:
-    #     form = BlogForm
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You have successfully logged today\'s work! Well done!')
+    else:
+        form = BlogForm
 
     return render(request, 'userprofile/blog.html', {
-        # 'form': form,
-        'blogs': blog
+        'form': form,
+        'blogs': blogs
 
     })
 
