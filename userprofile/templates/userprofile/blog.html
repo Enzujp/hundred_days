@@ -14,7 +14,7 @@
             {{ blog }}
         </div>
         <div class="create-blog content">
-            <form action="/blogs" method="POST">
+            <form action="." method="POST">
                 {% csrf_token %}
                 <label for="title">Blog Title</label>
                 <input type="text" id="title" name="title" required>
