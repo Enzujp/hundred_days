@@ -63,7 +63,6 @@ def language_cart_checkout(request):
         if form.is_valid():
             for item in cart:
                 language = item['language']
-                # total_price += product.price * int(item['quantity'])
 
             order = form.save(commit=False)
             order.created_by = request.user
@@ -71,7 +70,7 @@ def language_cart_checkout(request):
 
             for item in cart:
                 language = item['language']
-                # quantity = int(item['quantity'])
+
                 item = LanguageOrderItem.objects.create(order=order, language=language)
             
             cart.clear()

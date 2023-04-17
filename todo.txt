@@ -8,8 +8,8 @@ restructure css for cart view page- done
 write a new boiler plate html for index display after logging in- done
 make add-to-cart function properly - done
 create a language-checkout page - done
-create a little personal library where users can log their daily workings, allow for crud operations too
-and maybe add a time stamp - idea conceived
+create a little personal library where users can log their daily workings, allow for crud operations too-
+and maybe add a time stamp - idea conceived, added time function in model
 move languages checked out to my-languages
 add some html to login and signup pages and checkout pages to clean them up-
 add a day count that shows what learning day it is
