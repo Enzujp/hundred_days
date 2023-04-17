@@ -106,7 +106,8 @@ def blogs(request):
 
         if form.is_valid():
 
-            form.save()
+            entry = form.save()
+            entry.request = request.user
             messages.success(request, 'You have successfully logged today\'s work! Well done!')
 
     else:
