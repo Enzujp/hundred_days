@@ -101,12 +101,14 @@ def signup(request):
 
 def blogs(request):
     blogs = Blog.objects.all()
-    if request.user == 'POST':
+    if request.method == 'POST':
         form = BlogForm(request.POST)
 
         if form.is_valid():
+
             form.save()
             messages.success(request, 'You have successfully logged today\'s work! Well done!')
+
     else:
         form = BlogForm
 
