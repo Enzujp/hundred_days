@@ -92,7 +92,7 @@ class LanguageOrderItem(models.Model):
     quantity = models.IntegerField(default=1)
 
 class Blog(models.Model):
-    """ This class lets a user log in daily learnings on their preferred languages! """
+    """ This model class lets a user log in daily learnings on their preferred languages! """
     day = models.IntegerField(default=1)
     title = models.CharField(max_length=100)
     text = models.TextField(max_length=500)

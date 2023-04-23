@@ -19,7 +19,6 @@ connect blog to my languages- on it
 
 
 deploy
-implement other changes afterwards
 
 
 continue with express js and nodejs
