@@ -12,7 +12,8 @@
 
     </div>
     <div class="create-blog content">
-        <form action="." method="POST">
+        <h4>Document what you've learned here :</h4>
+        <form action="." method="POST" class="form">
             {% csrf_token %}
             <label for="title">Blog Title</label>
             <input type="text" id="title" name="title" required>
@@ -32,7 +33,12 @@
     {% if blogs %}
     {% for blog in blogs %}
         <div class="blog">
-            {{ blog }}
+            <h3>Day</h3>
+            {{ blog.day }}
+            <h3>Title</h3>
+            {{ blog.title }}
+            <h3>Text</h3>
+            {{ blog.text }}
 
     {% endfor %}
     {% endif %}
