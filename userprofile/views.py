@@ -108,7 +108,7 @@ def blogs(request):
 
             entry = form.save()
             entry.request = request.user
-            messages.success(request, 'You have successfully logged today\'s work! Well done!')
+            messages.success(request, 'You have successfully logged today\'s work! Good job!')
 
     else:
         form = BlogForm
