@@ -94,7 +94,7 @@ class LanguageOrderItem(models.Model):
 class Blog(models.Model):
     """ This model class lets a user log in daily learnings on their preferred languages! """
     day = models.IntegerField(default=1)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True)
     text = models.TextField(max_length=500)
     author = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, default=None)
     language = models.ForeignKey(Language, related_name="language", on_delete=models.CASCADE, default=None)
