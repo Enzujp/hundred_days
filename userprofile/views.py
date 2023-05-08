@@ -116,10 +116,6 @@ def new_blog(request):
             entry.request = request.user
             messages.success(request, 'You have logged today\'s learnings. Good Job!')
 
-            return render(request, 'userprofile/new_blog.html', {
-                'form': form
-            })
-
         else: 
             form = BlogForm()
 
