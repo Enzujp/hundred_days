@@ -119,4 +119,9 @@ def new_blog(request):
         else: 
             form = BlogForm()
 
+        return render(request, 'userprofile/new_blog.html', {
+                'form': form
+            })
+
+
 # need to find a way to sort out the issue with the blogs
