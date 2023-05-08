@@ -101,23 +101,26 @@ def signup(request):
 
 def blogs(request):
     blogs = Blog.objects.all()
-    if request.method == 'POST':
-        form = BlogForm(request.POST)
-
-        if form.is_valid():
-
-            entry = form.save()
-            entry.request = request.user
-            messages.success(request, 'You have successfully logged today\'s work! Good job!')
-
-    else:
-        form = BlogForm
 
     return render(request, 'userprofile/blog.html', {
-        'form': form,
         'blogs': blogs
 
     })
 
+def new_blog(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST)
+
+        if form.is_valid():
+            entry = form.save()
+            entry.request = request.user
+            messages.success(request, 'You have logged today\'s learnings. Good Job!')
+
+            return render(request, 'userprofile/new_blog.html', {
+                'form': form
+            })
+
+        else: 
+            form = BlogForm()
 
 # need to find a way to sort out the issue with the blogs
