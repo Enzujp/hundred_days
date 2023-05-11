@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
@@ -100,7 +100,7 @@ def signup(request):
 
 
 def blogs(request):
-    blogs = Blog.objects.all()
+    blogs = get_object_or_404(Blog)
 
     return render(request, 'userprofile/blog.html', {
         'blogs': blogs

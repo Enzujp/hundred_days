@@ -5,7 +5,7 @@
 {% block content %}
     {% if messages %}
         {% for message in messages %}
-            {{ message }}
+           <h4 class="messages">{{ message }}</h4>
         {% endfor %}
     {% endif %}
 
@@ -14,7 +14,7 @@
 
     <hr>
 
-    {% if blogs > 0 %}
+    {% if blogs %}
     {% for blog in blogs %}
         <div class="blog">
             <h3>Day</h3>

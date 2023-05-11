@@ -210,6 +210,12 @@ a:hover {
 ;
  }
 
+ .messages{
+    background-color: #64a15c;
+    color: white;
+ }
+
+
 .checkout{
     padding: 8px;
     background: pink;
@@ -285,3 +291,5 @@ a:hover {
     padding: 3px;
     background-color: #64a15c;
  }
+
+ 

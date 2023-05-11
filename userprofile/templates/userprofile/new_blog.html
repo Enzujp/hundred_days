@@ -7,15 +7,12 @@
     </div>
         <div class="create-blog content">
             <h4><a href="{% url 'new_blog' %}">New Blog here </a></h4>
-            <form action="." method="post" class="form">
+            <form method="post" action="." enctype="multipart/form-data" class="space-y-5">
                 {% csrf_token %}
-                <label for="title">Blog Title</label>
-                <input type="text" id="title" name="title" required>
-                <label for="snippet">Blog snippet</label>
-                <input type="text" id="snippet" name="snippet" required> 
-                <label for="body">Blog body: </label>
-                <textarea id="body" name="body" required></textarea>
-                <button>Submit</button>
+        
+                {{ form.as_p }}
+        
+                <button class="py-2 px-4 bg-teal-500 text-white hover:bg-teal-800">Submit</button>
             </form>
     </div>
 {% endblock %}
