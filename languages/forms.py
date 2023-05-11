@@ -99,7 +99,7 @@ class BlogForm(forms.ModelForm):
             'title': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
-            'description_field': forms.Textarea(attrs={
+            'text': forms.Textarea(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
     }

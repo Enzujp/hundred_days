@@ -10,12 +10,11 @@
     {% endif %}
 
 
-    <h4 class="new-blog-link"><a href="{% url 'new_blog' %}">New blog</a></h4>
+    <h4 class="new-blog-link"><a href="{% url 'new_blog' %}">Click here to add a new blog</a></h4>
 
     <hr>
 
-    {{blog.title}}
-    {% if blogs %}
+    {% if blogs > 0 %}
     {% for blog in blogs %}
         <div class="blog">
             <h3>Day</h3>
@@ -27,6 +26,9 @@
         
 
     {% endfor %}
+
+    {% else %}
+        <h4>Hi there, click the link above to create a new blog and start documenting your progress!</h4>
     {% endif %}
 {% endblock %} 
     

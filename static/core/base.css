@@ -281,4 +281,7 @@ a:hover {
 
  .new-blog-link {
     color: black;
+    border: 1px solid black;
+    padding: 3px;
+    background-color: #64a15c;
  }

@@ -108,20 +108,22 @@ def blogs(request):
     })
 
 def new_blog(request):
-    if request.method == 'POST':
-        form = BlogForm(request.POST)
+        blog = Blog.objects.all()
+        if request.method == 'POST':
+            form = BlogForm(request.POST)
 
-        if form.is_valid():
-            entry = form.save()
-            entry.request = request.user
-            messages.success(request, 'You have logged today\'s learnings. Good Job!')
-
-        else: 
-            form = BlogForm()
-
+            if form.is_valid():
+                form.save()
         return render(request, 'userprofile/new_blog.html', {
-                'form': form
+                
             })
+        
 
+# def user_profile(request):
+    # """Displays information unique to the logged-in user."""
 
-# need to find a way to sort out the issue with the blogs
+    # user = authenticate(username='superuserusername', password='sueruserpassword')
+    # login(request, user)
+
+    # render(request, 'auth_lifecycle/user_profile.html',
+    #        context_instance=RequestContext(request))
