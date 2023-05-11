@@ -91,7 +91,7 @@ def signup(request):
             return redirect('index')
 
     else:
-        form = SignupForm
+        form = SignupForm()
 
     return render(request, 'userprofile/signup.html', {
         'form': form
@@ -114,10 +114,17 @@ def new_blog(request):
 
             if form.is_valid():
                 form.save()
-        return render(request, 'userprofile/new_blog.html', {
-                
-            })
+
+            messages.success(request, 'New entry successfully added!')
+
+            return redirect('blogs')
         
+        else:
+            form = BlogForm()
+        return render (request, 'userprofile/new_blog.html', {
+            'form': form
+        })
+
 
 # def user_profile(request):
     # """Displays information unique to the logged-in user."""
