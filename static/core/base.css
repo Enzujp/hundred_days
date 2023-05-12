@@ -246,7 +246,7 @@ a:hover {
     
  }
 
- .checkout-button {
+ .checkout-button, .denotions {
     padding: 8px;
     color: white;
     background: pink;
@@ -292,4 +292,3 @@ a:hover {
     background-color: #64a15c;
  }
 
- 

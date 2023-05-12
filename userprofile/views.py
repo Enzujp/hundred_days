@@ -127,6 +127,18 @@ def new_blog(request):
             'form': form
         })
 
+@login_required
+def edit_blog(request, pk):
+    blog = Blog.objects.filter(user=request.user).get(pk=pk)
+
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blog)
+        
+
+
+
+
+
 # @login_required
 # def user_profile(request):
     # """Displays information unique to the logged-in user."""
