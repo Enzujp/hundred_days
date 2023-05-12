@@ -93,6 +93,17 @@ class LanguageOrderItem(models.Model):
 
 class Blog(models.Model):
     """ This model class lets a user log in daily learnings on their preferred languages! """
+    
+    DRAFT = 'draft'
+    ACTIVE = 'active'
+    DELETED = 'deleted'
+
+    STATUS_CHOICES= (
+        (DRAFT, 'draft'),
+        (ACTIVE, 'Active'),
+        (DELETED, 'Deleted')
+    )
+    
     language = models.ForeignKey(Language, related_name="languages", on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, null=True)
     day = models.IntegerField(default=1, validators=[MaxValueValidator(100)])
