@@ -70,6 +70,7 @@ def edit_language(request, pk):
 
 # above view would be used by user to add language
 
+@login_required
 def delete_language(request, pk):
     language = Language.objects.filter(user=request.user).get(pk=pk)
     language.status = language.DELETED
@@ -98,15 +99,17 @@ def signup(request):
     }
     )
 
-
-def blogs(request):
-    blogs = get_object_or_404(Blog)
+@login_required
+def blogs(request, pk):
+    blogs = get_object_or_404(Blog, pk=pk)
 
     return render(request, 'userprofile/blog.html', {
         'blogs': blogs
 
     })
 
+
+@login_required
 def new_blog(request):
         blog = Blog.objects.all()
         if request.method == 'POST':
@@ -125,7 +128,7 @@ def new_blog(request):
             'form': form
         })
 
-
+# @login_required
 # def user_profile(request):
     # """Displays information unique to the logged-in user."""
 
