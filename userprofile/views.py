@@ -100,8 +100,8 @@ def signup(request):
     )
 
 @login_required
-def blogs(request, pk):
-    blogs = get_object_or_404(Blog, pk=pk)
+def blogs(request):
+    blogs = Blog.objects.all()
 
     return render(request, 'userprofile/blog.html', {
         'blogs': blogs
@@ -111,7 +111,6 @@ def blogs(request, pk):
 
 @login_required
 def new_blog(request):
-        blog = Blog.objects.all()
         if request.method == 'POST':
             form = BlogForm(request.POST)
 
