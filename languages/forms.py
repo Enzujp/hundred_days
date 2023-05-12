@@ -90,7 +90,7 @@ class LanguageForm(forms.ModelForm):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ('day', 'title', 'text',)
+        fields = ('day', 'title', 'text', 'language',)
 
     widgets = {
             'day': forms.TextInput(attrs={
@@ -100,6 +100,9 @@ class BlogForm(forms.ModelForm):
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'text': forms.Textarea(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'language': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
     }

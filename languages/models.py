@@ -96,7 +96,6 @@ class Blog(models.Model):
     day = models.IntegerField(default=1)
     title = models.CharField(max_length=100, blank=True)
     text = models.TextField(max_length=500)
-    author = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, default=None)
     language = models.ForeignKey(Language, related_name="language", on_delete=models.CASCADE, default=None)
 
     # remove last two columns or have them integrated in your form
