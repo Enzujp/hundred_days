@@ -101,8 +101,7 @@ def signup(request):
 
 @login_required
 def blogs(request):
-    blogs = Blog.objects.all()
-
+    blogs = request.user.blogs.exclude(status=Blog.DELETED)
     return render(request, 'userprofile/blog.html', {
         'blogs': blogs
 
@@ -133,7 +132,27 @@ def edit_blog(request, pk):
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
-        
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your changes have been saved!')
+            return redirect('blogs')
+    else:
+        form = BlogForm(instance=blog)
+    
+    return render(request, 'userprofile/edit_blog', {
+        'form': form,
+        'blog': blog,
+        'title': 'Edit blog'
+    })
+
+@login_required
+def delete_blog(request, pk):
+    blog = Blog.objects.filter(user=request.user).get(pk=pk)
+    blog.status = blog.DELETED
+    blog.save()
+    messages.success(request, 'This post has been deleted!')
+    return redirect('blogs')
 
 
 
