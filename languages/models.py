@@ -109,5 +109,6 @@ class Blog(models.Model):
     day = models.IntegerField(default=1, validators=[MaxValueValidator(100)])
     title = models.CharField(max_length=100, blank=True)
     text = models.TextField(max_length=800)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=ACTIVE)
     
 
