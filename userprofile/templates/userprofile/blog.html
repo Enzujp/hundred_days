@@ -14,13 +14,15 @@
 
     <hr>
 
-    {% if blogs %}
-    {% for blog in blogs %}
+    {% if contents %}
+
+    {% for content in contents %}
+
         <div class="blog">
             <h3>Day</h3>
-            {{ blog.day }}
+            {{ content.blog.id }}
             <h3>Title</h3>
-            {{ blog.title }}
+            {{ content.blog.title }}
             <h3>Text</h3>
             {{ blog.text }}
             <a href="{% url 'edit_blog' %}" class="denotions">Edit this post</a>

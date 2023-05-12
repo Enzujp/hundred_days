@@ -102,9 +102,10 @@ def signup(request):
 @login_required
 def blogs(request):
     blogs = request.user.blogs.exclude(status=Blog.DELETED)
+    # contents = BlogContent.objects.filter(blog__user=request.user)
     return render(request, 'userprofile/blog.html', {
-        'blogs': blogs
-
+        'blogs': blogs,
+        # 'contents': contents
     })
 
 
@@ -140,7 +141,7 @@ def edit_blog(request, pk):
     else:
         form = BlogForm(instance=blog)
     
-    return render(request, 'userprofile/edit_blog', {
+    return render(request, 'userprofile/blog.html', {
         'form': form,
         'blog': blog,
         'title': 'Edit blog'
