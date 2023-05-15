@@ -112,5 +112,3 @@ class Blog(models.Model):
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=ACTIVE)
     
 
-# class BlogContent(models.Model):
-#      blog = models.ForeignKey(Blog, related_name="blogs", on_delete=models.CASCADE)
