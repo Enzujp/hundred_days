@@ -14,7 +14,8 @@ and maybe add a time stamp - idea conceived, added time function in model
 move languages checked out to my-languages
 add some html to login and signup pages and checkout pages to clean them up-
 add a day count that shows what learning day it is - done 
-connect blog to my languages- on it
+connect blog to my languages- done
+add search functionality to blog post section
 
 
 

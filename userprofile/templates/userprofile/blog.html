@@ -15,7 +15,6 @@
     <hr>
 
     {% if request.user.blogs %}
-    hiiiii
     {% for blog in blogs %}
 
         <div class="blog">
@@ -25,8 +24,10 @@
             {{ blog.title }}
             <h3>Text</h3>
             {{ blog.text }}
+            <hr>
             <a href="{% url 'edit_blog' blog.pk %}" class="denotions">Edit this post</a>
             <a href="{% url 'delete_blog' blog.pk %}"  class="denotions">Delete this post</a>
+            <hr>
 
     {% endfor %}
             <hr>
