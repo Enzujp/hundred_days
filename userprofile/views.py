@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth import login
+# from django.contrib.auth.models import User
+from languages.models import User
 from languages.forms import SignupForm,LanguageForm, BlogForm
 from languages.models import Language, LanguageOrderItem, Blog
 from django.contrib.auth.decorators import login_required
@@ -100,13 +102,11 @@ def signup(request):
     )
 
 @login_required
-def blogs(request):
-    blogs = request.user.blogs.exclude(status=Blog.DELETED)
-    # contents = BlogContent.objects.filter(blog__user=request.user)
+def blogs(request,):
+    blogs = Blog.objects.all()
     return render(request, 'userprofile/blog.html', {
         'blogs': blogs,
-        # 'contents': contents
-    })
+    }) 
 
 
 @login_required

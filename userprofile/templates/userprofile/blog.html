@@ -14,26 +14,25 @@
 
     <hr>
 
-    {% if contents %}
-
-    {% for content in contents %}
+    {% if request.user.blogs %}
+    hiiiii
+    {% for blog in blogs %}
 
         <div class="blog">
             <h3>Day</h3>
-            {{ content.blog.id }}
+            {{ blog.day }}
             <h3>Title</h3>
-            {{ content.blog.title }}
+            {{ blog.title }}
             <h3>Text</h3>
             {{ blog.text }}
-            <a href="{% url 'edit_blog' %}" class="denotions">Edit this post</a>
-            <a href="{% url 'delete_blog' %}"  class="denotions">Delete this post</a>
-            
-        
+            <a href="{% url 'edit_blog' blog.pk %}" class="denotions">Edit this post</a>
+            <a href="{% url 'delete_blog' blog.pk %}"  class="denotions">Delete this post</a>
 
     {% endfor %}
-
+            <hr>
+            <h4>Click the link at the top to add a new blog!</h4>
     {% else %}
-        <h4>Hi there, click the link above to create a new blog and start documenting your progress!</h4>
+        <h4>Hi there you currently have no blog entries, click the link above to create a new blog and start documenting your progress!</h4>
     {% endif %}
 {% endblock %} 
     
