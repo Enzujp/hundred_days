@@ -77,12 +77,12 @@ def get_thumbnail(self):
 class LanguageOrder(models.Model):
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
-    title = models.CharField(max_length=225)
+    # title = models.CharField(max_length=225)
     created_by = models.ForeignKey(User, related_name="details", on_delete=models.SET_NULL, null=True)
-    language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
+    # language = models.ForeignKey(Language, related_name="details", on_delete=models.CASCADE, default=None)
     country = models.CharField(max_length=225, blank=True)
     city = models.CharField(max_length=225, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
 
 
 

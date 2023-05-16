@@ -6,12 +6,12 @@
 {% block content %}
     <h1>Checkout</h1>
 
-    <form method="post" action=".">
+    <form method="post" action="." enctype="multipart/form-data" class="space-y-5">
         {% csrf_token %}
 
         {{ form.as_p }}
-    </form>
 
-    <button class="checkout-button">Let's Go!</button>
+        <button class="py-2 px-4 bg-teal-500 text-white hover:bg-teal-800">Submit</button>
+    </form>
 {% endblock %}
     
