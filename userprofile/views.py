@@ -60,7 +60,7 @@ def add_language(request):
 
 
 def edit_language(request, pk):
-    language = Language.objects.filter(user=request.user).get(pk=pk)
+    language = Language.objects.filter(user=request.user).get(id=pk)
 
     if request.method == 'POST':
         form = LanguageForm(request.POST, request.FILES, instance=language)

@@ -16,6 +16,7 @@ add some html to login and signup pages and checkout pages to clean them up-
 add a day count that shows what learning day it is - done 
 connect blog to my languages- done
 add search functionality to blog post section
+check django documentation for email api integration
 
 
 

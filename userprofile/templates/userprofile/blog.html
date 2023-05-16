@@ -24,6 +24,8 @@
             {{ blog.title }}
             <h3>Text</h3>
             {{ blog.text }}
+            <h3>Created</h3>
+            {{ blog.date_created }}
             <hr>
             <a href="{% url 'edit_blog' blog.pk %}" class="denotions">Edit this post</a>
             <a href="{% url 'delete_blog' blog.pk %}"  class="denotions">Delete this post</a>
