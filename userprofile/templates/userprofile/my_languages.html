@@ -17,37 +17,35 @@
 
     <hr>
 
-    <div class="my-languages">
 
-        <div class="lang-detail"><strong>ID</strong></div>
-
-        <div class="lang-detail"><strong>Title</strong></div>
-        
-        <div class="lang-detail"><strong>Category</strong></div>
-
-    </div>
-
-    {% if language_order %}
     {% for language_order in language_orders %}
+            
+    
         <div class="orders">
+            <strong>ID</strong>
             {{ language_order.language.id }}
         </div>
 
         <div class="orders">
+            <strong>Title</strong>
             {{ language_order.title }}
         </div>
 
         <div class="orders">
+            <strong>Category</strong>
             {{ language_order.language.category }}
+        </div>
+
+        <div class="orders">
+            <strong>Quantity</strong>
+            {{ item.quantity }}
         </div>
 
     <hr>
 
     {% endfor %}
 
-    {% else %}
-    <hr>
+    
     <p>You currently have no languages in your library to work on...</p>
     <p>Languages would appear above when you add them to your list of languages!</p>
-    {% endif %}
 {% endblock %}

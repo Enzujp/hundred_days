@@ -75,6 +75,7 @@ def get_thumbnail(self):
 
     
 class LanguageOrder(models.Model):
+    language = models.ForeignKey(Language, related_name="language_order", on_delete=models.CASCADE, null=True)
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
     created_by = models.ForeignKey(User, related_name="details", on_delete=models.SET_NULL, null=True)
@@ -85,7 +86,7 @@ class LanguageOrder(models.Model):
 
 
 class LanguageOrderItem(models.Model):
-    order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
+    language_order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
     language = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
 

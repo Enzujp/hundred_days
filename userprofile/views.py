@@ -17,23 +17,14 @@ def myaccount(request):
 
 @login_required
 def my_languages(request):
-    language = request.user.languages.exclude(status=Language.DELETED)
+    languages = Language.objects.filter(user=request.user)
+    # languages = request.user.languages.exclude(status=Language.DELETED)
     language_orders = LanguageOrderItem.objects.filter(language__user=request.user)
     return render(request, 'userprofile/my_languages.html', {
-        'language': language,
+        'languages': languages,
         'order_items': language_orders
     })
 
-# use my_store function from ecommerce app to tailor this function
-
-@login_required
-def my_languages_detail(request):
-    pass
-
-# might not be necessary but check against my_store_details to be sure
-
-
-@login_required
 
 @login_required
 def add_language(request):
@@ -168,3 +159,6 @@ def delete_blog(request, pk):
 
     # render(request, 'auth_lifecycle/user_profile.html',
     #        context_instance=RequestContext(request))
+
+
+    

@@ -64,14 +64,14 @@ def language_cart_checkout(request):
             for item in cart:
                 language = item['language']
 
-            order = form.save(commit=False)
-            order.created_by = request.user
-            order.save()
+            language_order = form.save(commit=False)
+            language_order.created_by = request.user
+            language_order.save()
 
             for item in cart:
                 language = item['language']
 
-                item = LanguageOrderItem.objects.create(order=order, language=language)
+                item = LanguageOrderItem.objects.create(language_order=language_order, language=language)
             
             cart.clear()
 
