@@ -128,7 +128,14 @@ def new_blog(request):
         })
 
 @login_required
-def edit_blog(request, pk):
+def blog_detail(request):
+    blog = Blog.objects.all()
+    return render (request, 'userprofile/blog_detail.html', {
+        'blog': blog
+    })
+
+@login_required
+def edit_blog(request, pk): 
     blog = Blog.objects.filter(user=request.user).get(pk=pk)
 
     if request.method == 'POST':

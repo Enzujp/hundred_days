@@ -104,7 +104,7 @@ class Blog(models.Model):
     )
     
     language = models.ForeignKey(Language, related_name="languages", on_delete=models.SET_NULL, null=True)
-    user = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, null=True)
     day = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
     title = models.CharField(max_length=100, blank=True)
     text = models.TextField(max_length=800)

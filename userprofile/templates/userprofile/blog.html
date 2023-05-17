@@ -12,8 +12,6 @@
 
     <h4 class="new-blog-link"><a href="{% url 'new_blog' %}">Click here to add a new blog</a></h4>
 
-    <hr>
-
     {% if request.user.blogs %}
     {% for blog in blogs %}
 

@@ -286,9 +286,10 @@ a:hover {
  }
 
  .new-blog-link {
-    color: #64a15c;
+    color: black;
     border: 1px solid black;
     padding: 3px;
+
  }
  
  .blog {
