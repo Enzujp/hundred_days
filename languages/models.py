@@ -108,10 +108,11 @@ class Blog(models.Model):
     day = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
     title = models.CharField(max_length=100, blank=True)
     text = models.TextField(max_length=800)
+    slug = models.SlugField(max_length=300, unique=True, null=True)
     date_created = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=ACTIVE)
 
     def __str__(self):
-         return f'{self.title}, {self.text}, {self.date_created}'
+         return f'{self.title}'
     
 
