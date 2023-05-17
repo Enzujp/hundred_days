@@ -17,8 +17,8 @@ def myaccount(request):
 
 @login_required
 def my_languages(request):
-    languages = Language.objects.filter(user=request.user)
-    # languages = request.user.languages.exclude(status=Language.DELETED)
+    # languages = Language.objects.filter(user=request.user)
+    languages = request.user.languages.exclude(status=Language.DELETED)
     language_orders = LanguageOrderItem.objects.filter(language__user=request.user)
     return render(request, 'userprofile/my_languages.html', {
         'languages': languages,
@@ -60,6 +60,15 @@ def edit_language(request, pk):
             form.save()
             messages.success(request, 'Your changes have been made successfully!')
             return redirect('my_languages')
+        
+    else:
+        form = LanguageForm(instance=language)
+
+    return render (request, 'userprofile/language_form.html', {
+        'form': form,
+        'language': language,
+        'title': 'edit language'
+    })
 
 # above view would be used by user to add language
 
