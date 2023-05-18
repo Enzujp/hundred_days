@@ -296,3 +296,11 @@ a:hover {
     margin-top: 10px;
  }
 
+.read-more {
+    background-color: pink;
+    margin-bottom: 10px;
+}
+
+.control-links {
+    margin-top: 15px;
+}

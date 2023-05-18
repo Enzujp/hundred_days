@@ -13,24 +13,21 @@
     <h4 class="new-blog-link"><a href="{% url 'new_blog' %}">Click here to add a new blog</a></h4>
 
     {% if request.user.blogs %}
-    {% for blog in blogs %}
+    
 
-        <div class="blog">
-            <h3>Day</h3>
-            {{ blog.day }}
-            <h3>Title</h3>
-            {{ blog.title }}
-            <h3>Text</h3>
-            {{ blog.text }}
-            <h3>Created</h3>
-            {{ blog.date_created }}
-            <hr>
+    {% for blog in blogs %}
+        <p>{{ blog.title }}</p>
+        <p>{{ blog.author }}</p>
+        <p>{{ blog.text }}</p>
+        <a href="{% url 'blog_detail' blog.pk %}" class="read-more">Read More</a>
+
+        <div class="control-links">
             <a href="{% url 'edit_blog' blog.pk %}" class="denotions">Edit this post</a>
             <a href="{% url 'delete_blog' blog.pk %}"  class="denotions">Delete this post</a>
-            <hr>
+        </div>
+    <hr>
 
     {% endfor %}
-            <hr>
             <h4>Click the link at the top to add a new blog!</h4>
     {% else %}
         <h4>Hi there you currently have no blog entries, click the link above to create a new blog and start documenting your progress!</h4>

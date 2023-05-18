@@ -5,3 +5,16 @@
                 <label for="body">Blog body: </label>
                 <textarea id="body" name="body" required></textarea>
                 
+
+
+<div class="blog">
+            <h3>Day</h3>
+            {{ blog.day }}
+            <h3>Title</h3>
+            {{ blog.title }}
+            <h3>Text</h3>
+            {{ blog.text }}
+            <h3>Created</h3>
+            {{ blog.date_created }}
+            <hr>
+        

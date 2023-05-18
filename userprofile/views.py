@@ -128,15 +128,15 @@ def new_blog(request):
         })
 
 @login_required
-def blog_detail(request):
-    blog = Blog.objects.all()
+def blog_detail(request, pk):
+    blog = Blog.objects.filter.get(pk=pk)
     return render (request, 'userprofile/blog_detail.html', {
         'blog': blog
     })
 
 @login_required
 def edit_blog(request, pk): 
-    blog = Blog.objects.filter(user=request.user).get(pk=pk)
+    blog = Blog.objects.filter.get(pk=pk)
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)

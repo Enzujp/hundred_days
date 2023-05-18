@@ -10,8 +10,3 @@
 
 
 
-{% for blog in blogs %}
-{{ blog.title }}
-{{ blog.author }}
-{{ blog.text| slice: ":40" }}
-<a href="{% url 'blog_detail' blog.pk %}">Read More</a>
