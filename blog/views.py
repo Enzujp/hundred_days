@@ -16,5 +16,5 @@ def blog_contents(request, id):
 
 # def new_blog(request):
 #     if request.method == "POST":
-#         form = BlogPostForm(request.POST)
+#         form = BlogForm(request.POST)
 

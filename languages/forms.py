@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import LanguageOrder, User, Language
+from blog.models import Blog
 
 
 class SignupForm(UserCreationForm):
@@ -87,19 +88,19 @@ class LanguageForm(forms.ModelForm):
         }
 
 
-# class BlogForm(forms.ModelForm):
-#     class Meta:
-#         model = Blog
-#         fields = ('day', 'title', 'text',)
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Blog
+        fields = ('day', 'title', 'content',)
 
-#     widgets = {
-#             'day': forms.TextInput(attrs={
-#                 'class': 'w-full p-4 border border-gray-200'
-#             }),
-#             'title': forms.TextInput(attrs={
-#                 'class': 'w-full p-4 border border-gray-200'
-#             }),
-#             'text': forms.Textarea(attrs={
-#                 'class': 'w-full p-4 border border-gray-200'
-#             }),
-#     }
+    widgets = {
+            'day': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'title': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'content': forms.Textarea(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+    }
