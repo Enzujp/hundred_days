@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+from .models import Blog
+
+def blogpost(request):
+    blogs = Blog.objects.filter(status=Blog.ACTIVE)
+    return render(request, 'blog/blogpost.html', {
+        'blogs': blogs
+    })
