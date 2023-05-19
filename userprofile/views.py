@@ -4,8 +4,8 @@ from django.utils.text import slugify
 from django.contrib.auth import login
 # from django.contrib.auth.models import User
 from languages.models import User
-from languages.forms import SignupForm,LanguageForm, BlogForm
-from languages.models import Language, LanguageOrderItem, Blog
+from languages.forms import SignupForm,LanguageForm
+from languages.models import Language, LanguageOrderItem
 from django.contrib.auth.decorators import login_required
 
 
@@ -100,68 +100,6 @@ def signup(request):
         'form': form
     }
     )
-
-@login_required
-def blogs(request,):
-    blogs = Blog.objects.all()
-    return render(request, 'userprofile/blog.html', {
-        'blogs': blogs,
-    }) 
-
-
-@login_required
-def new_blog(request):
-        if request.method == 'POST':
-            form = BlogForm(request.POST)
-
-            if form.is_valid():
-                form.save()
-
-            messages.success(request, 'New entry successfully added!')
-
-            return redirect('blogs')
-        
-        else:
-            form = BlogForm()
-        return render (request, 'userprofile/new_blog.html', {
-            'form': form
-        })
-
-@login_required
-def blog_detail(request, pk):
-    blog = Blog.objects.filter.get(pk=pk)
-    return render (request, 'userprofile/blog_detail.html', {
-        'blog': blog
-    })
-
-@login_required
-def edit_blog(request, pk): 
-    blog = Blog.objects.filter.get(pk=pk)
-
-    if request.method == 'POST':
-        form = BlogForm(request.POST, request.FILES, instance=blog)
-
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your changes have been saved!')
-            return redirect('blogs')
-    else:
-        form = BlogForm(instance=blog)
-    
-    return render(request, 'userprofile/blog.html', {
-        'form': form,
-        'blog': blog,
-        'title': 'Edit blog'
-    })
-
-@login_required
-def delete_blog(request, pk):
-    blog = Blog.objects.filter(user=request.user).get(pk=pk)
-    blog.status = blog.DELETED
-    blog.save()
-    messages.success(request, 'This post has been deleted!')
-    return redirect('blogs')
-
 
 
 

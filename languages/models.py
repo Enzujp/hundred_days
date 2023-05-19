@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
-from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 
@@ -89,30 +88,4 @@ class LanguageOrderItem(models.Model):
     language_order = models.ForeignKey(LanguageOrder, related_name="items", on_delete=models.CASCADE)
     language = models.ForeignKey(Language, related_name="items", on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-
-class Blog(models.Model):
-    """ This model class lets a user log in daily learnings on their preferred languages! """
-    
-    DRAFT = 'draft'
-    ACTIVE = 'active'
-    DELETED = 'deleted'
-
-    STATUS_CHOICES= (
-        (DRAFT, 'draft'),
-        (ACTIVE, 'Active'),
-        (DELETED, 'Deleted')
-    )
-    
-    language = models.ForeignKey(Language, related_name="languages", on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey(User, related_name="blogs", on_delete=models.CASCADE, null=True)
-    day = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
-    title = models.CharField(max_length=100, blank=True)
-    text = models.TextField(max_length=800)
-    slug = models.SlugField(max_length=300, unique=True, null=True)
-    date_created = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=ACTIVE)
-
-    def __str__(self):
-         return f'{self.title}'
-    
 
