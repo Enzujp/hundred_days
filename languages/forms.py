@@ -101,6 +101,6 @@ class BlogForm(forms.ModelForm):
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'content': forms.Textarea(attrs={
-                'class': 'w-full p-4 border border-gray-200'
+                'class': 'w-full p-8 border border-gray-200'
             }),
     }

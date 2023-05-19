@@ -16,13 +16,13 @@ class Blog(models.Model):
 
 
     author = models.ForeignKey(User, related_name="blog_posts", on_delete=models.CASCADE)
-    title = models.CharField(max_length=80, blank=True)
+    title = models.CharField(max_length=80, )
     content = models.CharField(max_length=900)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     day = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
-    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=True)
-    # slug = models.SlugField(max_length=50, default="", null=False)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=ACTIVE)
+    slug = models.SlugField(max_length=50, default="", null=True)
 
 
     class Meta:
