@@ -22,7 +22,7 @@ class Blog(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     day = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=True)
-    slug = models.SlugField(max_length=50, default="", null=False)
+    # slug = models.SlugField(max_length=50, default="", null=False)
 
 
     class Meta:
