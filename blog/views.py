@@ -7,3 +7,9 @@ def blogposts(request):
     return render(request, 'blog/blogpost.html', {
         'blogs': blogs
     })
+
+def contents(request, pk):
+    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(id=pk)
+    return render(request, 'blog/content.html', {
+        'blogs': blogs,
+    })
