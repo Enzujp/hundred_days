@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Blog
 
@@ -8,8 +8,9 @@ def blogposts(request):
         'blogs': blogs
     })
 
-def contents(request, pk):
-    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(id=pk)
-    return render(request, 'blog/content.html', {
+def blog_contents(request, slug):
+    # blogs = get_object_or_404(Blog, slug=slug, status=Blog.ACTIVE)
+    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(slug=slug)
+    return render(request, 'blog/contents.html', {
         'blogs': blogs,
     })

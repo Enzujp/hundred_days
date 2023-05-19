@@ -8,7 +8,7 @@
             {{ blog.id }}
             <p>{{ blog.title }}</p>
             <p>{{ blog.content }}</p>
-            <p><a style="color:black" href="{% url 'contents' contents_id %}">Read More</a></p>
+            <p><a style="color:black" href="{% url 'details' blog.slug %}">Read More</a></p>
            
         {% endfor %}
     {% endif %}

@@ -1,7 +1,12 @@
 {% extends 'core/login_index.html' %}
 
-{% block title %}{{ user.blog.title }}{% endblock %}
+{% block title %}{{ blog.title }}{% endblock %}
 
 {% block content %}
-This is my block content!
-{% endvlock %}
+    {% if blog %}
+    <h1>{{ blog.author }}</h1>
+    <p>{{ blog.title }}</p>
+    <p>{{ blog.content | safe }}</p>
+    {% endif %}
+
+{% endblock %}
