@@ -1,14 +1,14 @@
 {% extends 'core/login_index.html' %}
 
-{% block title %}{{ user.blog.title }}{% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
     {% if user == request.user %}
         {% for blog in blogs %}
             {{ blog.id }}
             <p>{{ blog.title }}</p>
-            <p>{{ blog.content }}</p>
-            <p><a style="color:black" href="{% url 'details' blog.slug %}">Read More</a></p>
+            <p>{{ blog.content|slice:":15" }} ...</p>
+            <p><a style="color:black" href="{% url 'blog_contents' blog.id %}">Read More</a></p>
            
         {% endfor %}
     {% endif %}

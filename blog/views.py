@@ -8,9 +8,13 @@ def blogposts(request):
         'blogs': blogs
     })
 
-def blog_contents(request, slug):
-    # blogs = get_object_or_404(Blog, slug=slug, status=Blog.ACTIVE)
-    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(slug=slug)
+def blog_contents(request, id):
+    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(id=id)
     return render(request, 'blog/contents.html', {
         'blogs': blogs,
     })
+
+# def new_blog(request):
+#     if request.method == "POST":
+#         form = BlogPostForm(request.POST)
+
