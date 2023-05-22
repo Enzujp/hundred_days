@@ -3,6 +3,7 @@
 {% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
+
     <a href="{% url 'new_blog' %}" class="new-blog-link">Click here to start a new blog</a>
 
     {% if user == request.user %}

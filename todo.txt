@@ -14,12 +14,17 @@ add a day count that shows what learning day it is - done
 connect blog to my languages- done
 
 
-add search functionality to blog post section
-check django documentation for email api integration
 
+
+
+check django documentation for email api integration
 add some html to login and signup pages and checkout pages to clean them up-
 move languages checked out to my-languages
 allow for crud operations too- fixed the adding of a new blog, working on edit, update and delete
+
+
+
+
 
 deploy
 

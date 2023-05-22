@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-# from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
 
@@ -17,6 +18,7 @@ def blog_contents(request, id):
     return render(request, 'blog/contents.html', {
         'blogs': blogs,
     })
+
 
 def new_blog(request):
     if request.method == "POST":
