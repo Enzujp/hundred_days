@@ -9,16 +9,17 @@ write a new boiler plate html for index display after logging in- done
 make add-to-cart function properly - done
 create a language-checkout page - done
 create a little personal library where users can log their daily workings -done, 
-allow for crud operations too- working on it
-and maybe add a time stamp - idea conceived, added time function in model
-move languages checked out to my-languages
-add some html to login and signup pages and checkout pages to clean them up-
+and maybe add a time stamp - idea conceived, added time function in model- done 
 add a day count that shows what learning day it is - done 
 connect blog to my languages- done
+
+
 add search functionality to blog post section
 check django documentation for email api integration
 
-
+add some html to login and signup pages and checkout pages to clean them up-
+move languages checked out to my-languages
+allow for crud operations too- fixed the adding of a new blog, working on edit, update and delete
 
 deploy
 
