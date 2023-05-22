@@ -25,6 +25,7 @@ def new_blog(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             form.save()
+        return redirect('blogs')
     else:
         form = BlogForm()
 
@@ -34,14 +35,14 @@ def new_blog(request):
 
 
 def edit_blog(request, id):
-    blog = Blog.objects.filter(user=request.user).get(id=id)
+    blog = Blog.objects.filter.get(id=id)
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
 
         if form.is_valid():
             form.save()
             messages.success(request, 'Your edits have been saved!')
-            return redirect('blog')
+            return redirect('blogs')
 
     else:
         form = BlogForm(instance=blog)
@@ -52,8 +53,8 @@ def edit_blog(request, id):
     })
 
 def delete_blog(request, id):
-    blog = Blog.objects.filter(user=request.user).get(id=id)
+    blog = Blog.objects.get(id=id)
     blog.status = blog.DELETED
     blog.save()
     messages.success(request, 'Your post has been successfully deleted')
-    return redirect('blog')
+    return redirect('blogs')

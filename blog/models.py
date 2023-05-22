@@ -15,7 +15,7 @@ class Blog(models.Model):
     )
 
 
-    author = models.ForeignKey(User, related_name="blog_posts", on_delete=models.CASCADE)
+    # author = models.ForeignKey(User, related_name="blog_posts", on_delete=models.CASCADE)
     title = models.CharField(max_length=80, )
     content = models.CharField(max_length=900)
     created_at = models.DateTimeField(auto_now_add=True)
