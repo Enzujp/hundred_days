@@ -22,8 +22,9 @@ def my_languages(request):
     language_orders = LanguageOrderItem.objects.filter(language__user=request.user)
     return render(request, 'userprofile/my_languages.html', {
         'languages': languages,
-        'order_items': language_orders
+        'language_orders': language_orders
     })
+
 
 
 @login_required

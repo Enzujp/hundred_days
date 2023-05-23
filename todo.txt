@@ -25,7 +25,8 @@ create a userprofile
 
 
 
-
+separate blog app into an entirely different project
+build a chat application
 deploy
 
 

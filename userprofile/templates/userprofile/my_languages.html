@@ -1,26 +1,18 @@
 {% extends 'core/login_index.html' %}
 {% block titie %}My languages{% endblock %}
 
-{% block content %}    
-    {% if messages %}
-        {% for message in messages %}
-            <h3 class="messages">
-                {{ message }}
-            </h3>
-
-        {% endfor %}
-    {% endif %}
-
-    
+{% block content %}      
 
     <h2 style="margin: 10px;">My Languages</h2>
 
     <hr>
     <h4>This is a plus </h4>
-
-    {% for language_order in language_orders %}
+    {% for item in language_order.items.all %}
+    <h4>Hallelujah</h4>
+        {% if item.language.user == request.user %}
             
-    
+    <p>Hallelujah!</p>
+    {% endif %}
         <div class="orders">
             <strong>ID</strong>
             {{ language_order.language.id }}
