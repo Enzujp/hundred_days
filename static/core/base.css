@@ -305,13 +305,18 @@ a:hover {
     margin-top: 15px;
 }
 
-.form-content {
-    background: url(http://rb.gy/e4l0n);
+/* .form-content { */
+    /* background: url(http://rb.gy/ghdaw); */
 
-}
+/* } */
 
 .form-body {
     margin: 0 auto;
-    color: white;
+    color: black;
     width: 300px;
+    margin-top: 20px;
+}
+
+.top-tag {
+    margin-left: 550px;
 }

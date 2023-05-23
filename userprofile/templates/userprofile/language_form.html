@@ -1,16 +1,19 @@
 {% extends 'core/login_index.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
+    <h1 class="top-tag">{{ title }}</h1>
+    <div class="form-body">
     <form method="post" action="." enctype="multipart/form-data" class="form">
         {% csrf_token %}
         {{ form_as.p }}
         
         <button>Submit</button>
     </form>
-
+    </div>
 {% if language %}
     <a href="{% url 'delete_language' language.pk %}" class="delete-language">Delete Language</a>
 {% endif %}

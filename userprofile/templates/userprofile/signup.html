@@ -1,22 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Enzu">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{% endblock %} | Signup</title>
-        <link rel="stylesheet" href="{% static 'core/base.css' %}">
-        <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
-    </head>
-
-
-<body class="form-content">
+{% extends 'core/login_index.html' %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
-<h1 class="text-2xl">Signup</h1>
+<h1 class="top-tag">Signup</h1>
 <div class="form-body">
     <form method="post" action="." >
         {% csrf_token %}

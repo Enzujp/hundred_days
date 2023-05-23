@@ -83,13 +83,7 @@ class SignupForm(UserCreationForm):
                 
                 
             }),
-            # 'password2': forms.PasswordInput(attrs={
-            #     'class': "form-control",
-            #     'style': 'max-width: 300px'
-            # }),
         }
-
-
 
     def save(self, commit=True):
         user = super(SignupForm, self).save(commit=False)
@@ -156,6 +150,6 @@ class BlogForm(forms.ModelForm):
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'content': forms.Textarea(attrs={
-                'class': 'w-full p-8 border border-gray-200'
+                'class': 'w-full p-4 border border-gray-200'
             }),
     }
