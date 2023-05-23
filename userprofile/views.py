@@ -44,7 +44,6 @@ def add_language(request):
             return redirect('my_languages')
     else:
         form = LanguageForm()
-    form = LanguageForm()
     return render (request, 'userprofile/language_form.html', {
         'form': form,
         'title': 'Add Language'

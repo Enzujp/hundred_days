@@ -6,10 +6,14 @@
     <h2 style="margin: 10px;">My Languages</h2>
 
     <hr>
-    <h4>This is a plus </h4>
+    <h4>Add a new language here: </h4>
+    <a href="{% url 'add-language' %}" class="basic-link">click to add a new language</a>
     {% for item in language_order.items.all %}
     <h4>Hallelujah</h4>
-        {% if item.language.user == request.user %}
+    {% for language in languages %}
+    this is it 
+    {% endfor %}
+        {% if language %}
             
     <p>Hallelujah!</p>
     {% endif %}

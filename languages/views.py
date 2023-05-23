@@ -70,8 +70,9 @@ def language_cart_checkout(request):
 
             for item in cart:
                 language = item['language']
+                quantity = int(item['quantity'])
 
-                item = LanguageOrderItem.objects.create(language_order=language_order, language=language)
+                item = LanguageOrderItem.objects.create(language_order=language_order, language=language, quantity=quantity)
             
             cart.clear()
 

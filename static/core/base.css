@@ -320,3 +320,12 @@ a:hover {
 .top-tag {
     margin-left: 550px;
 }
+
+.blog-structure {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.basic-link {
+    color: black;
+}

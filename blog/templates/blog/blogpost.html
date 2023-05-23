@@ -9,7 +9,7 @@
     {% if user == request.user %}
         {% for blog in blogs %}
             {{ blog.id }}
-            
+            <div class="blog-structure"> 
             <p>{{ blog.title }}</p>
             
             <p>{{ blog.content|slice:":15" }} ...</p>
@@ -19,7 +19,7 @@
             <p><a href="{% url 'delete_blog' blog.id %}">Delete blog</a></p>
 
             <p><a href="{% url 'edit_blog' blog.id %}">Edit Blog</a></p>
-           
+            </div> 
         {% endfor %}
     {% endif %}
 {% endblock %}

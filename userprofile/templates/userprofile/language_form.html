@@ -9,7 +9,7 @@
     <div class="form-body">
     <form method="post" action="." enctype="multipart/form-data" class="form">
         {% csrf_token %}
-        {{ form_as.p }}
+        {{ form|crispy }}
         
         <button>Submit</button>
     </form>
