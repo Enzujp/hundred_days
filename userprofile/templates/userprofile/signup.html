@@ -1,15 +1,15 @@
-{% extends 'core/base.html' %}
+{% extends 'core/login_index.html' %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}Sign up{% endblock %}
 
 {% block content %}
-    <h1>Signup</h1>
+<h1 class="text-2xl">Signup</h1>
 
-    <form method="post" action=".">
-        {% csrf_token %}
+<form method="post" action=".">
+    {% csrf_token %}
 
-        {{ form.as_p }}
+    {{ form.as_p }}
 
-        <button>Signup</button>
-    </form>
+    <button class="px-8 py-4 bg-teal-800 text-white">Sign up</button>
+</form>
 {% endblock %}
