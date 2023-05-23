@@ -17,15 +17,17 @@ connect blog to my languages- done
 
 
 
-check django documentation for email api integration
-add some html to login and signup pages and checkout pages to clean them up-
-move languages checked out to my-languages
+
+add some html to login and signup pages and checkout pages to clean them up- done
+move languages checked out to my-languages - done
 allow for crud operations too- fixed the adding of a new blog, and the delete function, working on editing and update
+
+style my-languages
 create a userprofile
+check django documentation for email api integration
 
 
-
-separate blog app into an entirely different project
+separate blog app into an entirely different project- on it
 build a chat application
 deploy
 
