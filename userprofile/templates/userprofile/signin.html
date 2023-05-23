@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Sign-in page{% endblock %}
 
@@ -7,8 +8,11 @@
 
     <form method="post" action=".">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
 
         <button>Login</button>
     </form>
 {% endblock %}
+
+
+http://rb.gy/z8vcy

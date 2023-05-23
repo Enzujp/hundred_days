@@ -304,3 +304,14 @@ a:hover {
 .control-links {
     margin-top: 15px;
 }
+
+.form-content {
+    background: url(http://rb.gy/e4l0n);
+
+}
+
+.form-body {
+    margin: 0 auto;
+    color: white;
+    width: 300px;
+}

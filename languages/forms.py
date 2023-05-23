@@ -54,7 +54,7 @@ class SignupForm(UserCreationForm):
         
         widgets = {
             'first_name': forms.TextInput(attrs={
-                'class': "form-control",
+                'class': 'w-full p-4 border border-gray-200',
                 'style': "max-width: 300px",
                 'placeholder': "first name"
             }),
