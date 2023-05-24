@@ -9,13 +9,12 @@
     <h4>Add a new language here: </h4>
     <a href="{% url 'add-language' %}" class="basic-link">click to add a new language</a>
     {% for language_order in language_orders %}
-    <h4>Hallelujah</h4>
-        {{ language_order.language.title }}
-        {{ language_order.quantity }}
-        {% if language %}
-            
-    <p>Hallelujah!</p>
-    {% endif %}
+
+    {% if language_order.language.image %}
+    <img src="{{ language.image.url }}" alt="Image of {{ language_order.language.title }}">
+    
+    <hr>
+    
         <div class="orders">
             <strong>ID</strong>
             {{ language_order.language.id }}
@@ -29,18 +28,13 @@
         <div class="orders">
             <strong>Category</strong>
             {{ language_order.language.category }}
-        </div>
+        </div>    
 
-        <div class="orders">
-            <strong>Quantity</strong>
-            {{ item.quantity }}
-        </div>
-
-    <hr>
-
-    {% endfor %}
-
+    {% else %}
     
     <p>You currently have no languages in your library to work on...</p>
     <p>Languages would appear above when you add them to your list of languages!</p>
+    {% endif %}
+    {% endfor %}
+
 {% endblock %}
