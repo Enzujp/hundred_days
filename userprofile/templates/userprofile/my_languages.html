@@ -24,8 +24,8 @@
             {{ language_order.language.category }}
         </div>     
 
-        <a href="{% url 'edit-language' language_order.language.id %}">Edit language</a>
-        <a href="{% url 'delete-language' language_order.language.id %}">Remove Language</a>
+        <a href="{% url 'edit-language' language_order.language.id %}" class="basic-link">Edit language</a>
+        <a href="{% url 'delete-language' language_order.language.id %}" class="basic-link">Remove Language</a>
     {% else %}
     
     <p>You currently have no languages in your library to work on...</p>

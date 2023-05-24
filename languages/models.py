@@ -24,7 +24,7 @@ class Language(models.Model):
     STATUS_CHOICES = (
     (ACTIVE, 'active'),
     (PAUSED, 'paused'),
-    (DELETED, 'deleted')
+    (DELETED, 'deleted'),
     )
 
     category = models.ForeignKey(Category, related_name="languages", on_delete=models.CASCADE)

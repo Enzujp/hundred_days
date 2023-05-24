@@ -22,10 +22,23 @@ add some html to login and signup pages and checkout pages to clean them up- don
 move languages checked out to my-languages - done
 allow for crud operations too- fixed the adding of a new blog, and the delete function, working on editing and update
 
+
+
+clear homepage language links
+leave an empty slate
+redirect language detail to individual "my language" profiles
+take out checkout page
+rename cart
+style everything
+
+
+
+
+
 style my-languages
 create a userprofile
 check django documentation for email api integration
-
+push this damn app out of your laptop!!
 
 separate blog app into an entirely different project- on it
 build a chat application
