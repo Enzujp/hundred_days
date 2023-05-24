@@ -18,3 +18,6 @@
             {{ blog.date_created }}
             <hr>
         
+
+http://rb.gy/e4l0n - this is a fancy background image link for css, if I decide to use a background image
+
