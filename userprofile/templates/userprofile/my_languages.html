@@ -14,22 +14,18 @@
     <img src="{{ language.image.url }}" alt="Image of {{ language_order.language.title }}">
     
     <hr>
-    
-        <div class="orders">
-            <strong>ID</strong>
-            {{ language_order.language.id }}
-        </div>
-
         <div class="orders">
             <strong>Title</strong>
-            {{ language_order.title }}
+            {{ language_order.language.title }}
         </div>
 
         <div class="orders">
             <strong>Category</strong>
             {{ language_order.language.category }}
-        </div>    
+        </div>     
 
+        <a href="{% url 'edit-language' language_order.language.id %}">Edit language</a>
+        <a href="{% url 'delete-language' language_order.language.id %}">Remove Language</a>
     {% else %}
     
     <p>You currently have no languages in your library to work on...</p>

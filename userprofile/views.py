@@ -67,7 +67,7 @@ def edit_language(request, pk):
     return render (request, 'userprofile/language_form.html', {
         'form': form,
         'language': language,
-        'title': 'edit language'
+        'title': 'Edit Language'
     })
 
 # above view would be used by user to add language
