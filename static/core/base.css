@@ -14,8 +14,9 @@ body {
 }
 
 h1 {
-    color: black;
+    color: wheat;
 }
+
 
 .welcome-note {
     max-width: 70%;
@@ -35,7 +36,7 @@ body {
 }
 
 header {
-    background: #64a15c;
+    background: #04010f;
     z-index: 999;
     text-align: center;
     padding: 50px;
@@ -327,6 +328,9 @@ a:hover {
 }
 
 .basic-link {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: pink;
     color: black;
 }
 
@@ -335,4 +339,8 @@ a:hover {
     height: 20%;
     padding: 10px;
     margin-bottom: 30px;
+}
+
+.orders {
+    margin: 10px;
 }

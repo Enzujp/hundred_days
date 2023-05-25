@@ -18,15 +18,15 @@
 
                 <nav>
                     <ul class="nav-links">                        
-                        {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'login_index' %}">Home</a></li>
+                        {% if request.user.is_authenticated %} 
+                            <li><a href="{% url 'login_index' %}" class="liners">Home</a></li>
                         {% else %}
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/" class="liners">Home</a></li>
                         {% endif %}
-                            <li><a href="{% url 'cart' %}">Cart ({{cart|length}})</a></li>
-                        <li><a href="{% url 'signin' %}">Sign-in</a></li>
-                        <li><a href="{% url 'signup' %}">Sign-up</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'cart' %}" class="liners">Cart ({{cart|length}})</a></li>
+                        <li><a href="{% url 'signin' %}" class="liners">Sign-in</a></li>
+                        <li><a href="{% url 'signup' %}" class="liners">Sign-up</a></li>
+                        <li><a href="{% url 'about' %}" class="liners">About</a></li>
                         <div class="search">
                             <form method="get" action="/search/" class="flex items-center space-x-4 ">
                                 <input type="search" name="query" placeholder="Search..." > 
