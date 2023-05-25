@@ -329,3 +329,10 @@ a:hover {
 .basic-link {
     color: black;
 }
+
+.lang-image {
+    max-width: 40%;
+    height: 40%;
+    padding: 10px;
+    margin-bottom: 30px;
+}
