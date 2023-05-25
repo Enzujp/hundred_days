@@ -121,7 +121,7 @@ a:hover {
 .logout{
     border: 2px solid black;
     padding: 5px;
-    background: #82c8c8;
+    background: pink;
     text-decoration: none;
 }
 
@@ -286,10 +286,13 @@ a:hover {
     margin-bottom: 50px;
  }
 
- .new-blog-link {
+ .blog-link {
     color: black;
     border: 1px solid black;
     padding: 3px;
+    background-color: pink;
+    margin-top: 8px;
+    margin-right: 5px;
 
  }
  
@@ -297,19 +300,11 @@ a:hover {
     margin-top: 10px;
  }
 
-.read-more {
-    background-color: pink;
-    margin-bottom: 10px;
-}
 
 .control-links {
     margin-top: 15px;
 }
 
-/* .form-content { */
-    /* background: url(http://rb.gy/ghdaw); */
-
-/* } */
 
 .form-body {
     margin: 0 auto;
@@ -323,7 +318,8 @@ a:hover {
 }
 
 .blog-structure {
-    margin-bottom: 10px;
+    margin: 20px;
+    padding: 5px;
     display: flex;
 }
 
@@ -332,6 +328,15 @@ a:hover {
     padding: 5px;
     background-color: pink;
     color: black;
+}
+
+.read-more{
+    border: 1px solid black;
+    padding: 5px;
+    background-color: pink;
+    color: black;
+    margin: 10px;
+    
 }
 
 .lang-image {
