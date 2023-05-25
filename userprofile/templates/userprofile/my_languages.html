@@ -6,34 +6,35 @@
     <h2 style="margin: 10px;">My Languages</h2>
 
     <hr>
-    <h4>Add a new language here: </h4>
-    <div class="orders">
-        <strong>Category</strong>
-       <p> Welcome to your Language storage, friend!
-    </div>  
-    {% if languages %}
-    hahaha, this works
-    {% endif %}
+    <h4><a href="{% url 'add-language' %}" class="basic-link">Click to add a new language</a></h4>
 
-    <a href="{% url 'add-language' %}" class="basic-link">click to add a new language</a>
+    <div class="orders">
+       <p> Welcome to your Language storage, friend!</p>
+    </div>  
     {% for language in languages %}
-    This is yet another test
     {% if language.image %}
     <img src="{{ language.image.url }}" alt="Image of {{ language.title }}" class="lang-image">
     
-    <hr>
+    
         <div class="orders">
-            <strong>Title</strong>
+            <strong>Title:</strong>
             {{ language.title }}
         </div>
 
         <div class="orders">
-            <strong>Category</strong>
+            <strong>Category:</strong>
             {{ language.category }}
-        </div>     
+        </div> 
+
+        <div class="orders">
+            <strong>user:</strong>
+            {{ language.user }}
+        </div> 
+  
 
         <a href="{% url 'edit-language' language.id %}" class="basic-link">Edit language</a>
         <a href="{% url 'delete-language' language.id %}" class="basic-link">Remove Language</a>
+        <hr>
     {% else %}
     
     <p>You currently have no languages in your library to work on...</p>
