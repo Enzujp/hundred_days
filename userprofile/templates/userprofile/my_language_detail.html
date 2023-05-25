@@ -1,5 +1,22 @@
 {% extends 'core/login_index.html' %}
 {% block titie %}Language detail {{ language_order.id }} {% endblock %}
 
-
+<div class="category-wrapper">
+    {% if language.user == request.user %}
+    {% for language in languages %}
+        <div class="category-display-size">
+            <div class="category-detail">
+                <a href="{% url 'language_detail' language.category.slug language.slug %}">
+                    {% if language.image %}
+                        <div class="img-structure">
+                            <img src="{{ language.image.url }}" alt="image of {{ language.title }}" >
+                        </div>
+                    {% endif %}
+                    <h4>{{ language.title }}</h4>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+</div>
 <!-- I might not require this particular page though. we'll see -->
