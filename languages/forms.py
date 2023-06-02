@@ -134,13 +134,16 @@ class LanguageForm(forms.ModelForm):
         }
 
 
-class BlogForm(forms.ModelForm):
+class NotesForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('day', 'title', 'content',)
+        fields = ('day', 'slug', 'title', 'content',)
 
     widgets = {
             'day': forms.TextInput(attrs={
+                'class': 'w-full p-4 border border-gray-200'
+            }),
+            'slug': forms.TextInput(attrs={
                 'class': 'w-full p-4 border border-gray-200'
             }),
             'title': forms.TextInput(attrs={

@@ -6,60 +6,60 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 from .models import Post
-from languages.forms import BlogForm
+from languages.forms import NotesForm
 
 @login_required
-def blogposts(request):
-    blogs = Post.objects.filter(status=Post.ACTIVE)
-    return render(request, 'blog/blogpost.html', {
+def mynotes(request):
+    blogs = Post.objects.filter(author=request.user).filter(status=Post.ACTIVE)
+    return render(request, 'notes/blogpost.html', {
         'blogs': blogs
     })
 
 @login_required
-def blog_contents(request, id):
-    blogs = Post.objects.filter(status=Post.ACTIVE).get(id=id)
-    return render(request, 'blog/contents.html', {
-        'blogs': blogs,
+def note_contents(request, slug):
+    notes = Post.objects.filter(status=Post.ACTIVE).get(slug=slug)
+    return render(request, 'notes/contents.html', {
+        'notes': notes,
     })
 
 @login_required
-def new_blog(request):
+def new_note(request):
     if request.method == "POST":
-        form = BlogForm(request.POST)
+        form = NotesForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('blogs')
+        return redirect('mynotes')
     else:
-        form = BlogForm()
+        form = NotesForm()
 
-    return render(request, 'blog/blogform.html', {
+    return render(request, 'notes/notesform.html', {
         'form': form
     })
 
 @login_required
-def edit_blog(request, id):
-    blog = Post.objects.get(id=id)
+def edit_blog(request, slug):
+    note = Post.objects.get(slug)
     if request.method == 'POST':
-        form = BlogForm(request.POST, request.FILES, instance=blog)
+        form = NotesForm(request.POST, request.FILES, instance=note)
 
         if form.is_valid():
             form.save()
             messages.success(request, 'Your edits have been saved!')
-            return redirect('blogs')
+            return redirect('mynotes')
 
     else:
-        form = BlogForm(instance=blog)
-    return render(request, 'blog/blogpost.html', {
-        'blog': blog,
+        form = NotesForm(instance=note)
+    return render(request, 'notes/notepost.html', {
+        'note': note,
         'form': form,
-        'title': 'Edit Blog'
+        'title': 'Edit Notes'
     })
 
 @login_required
-def delete_blog(request, id):
-    blog = Post.objects.get(id=id)
+def delete_blog(request, slug):
+    blog = Post.objects.get(slug=slug)
     blog.status = blog.DELETED
     blog.save()
     messages.success(request, 'Your post has been successfully deleted')
-    return redirect('blogs')
+    return redirect('mynotes')
 
