@@ -1,0 +1,15 @@
+{% extends 'core/login_index.html' %}
+
+{% block title %} {{ object.title }} {% endblock %}
+
+{% block content %}
+    {% if blog %}
+    praise God
+    {% endif %}
+    <p>{{ blog.title }}</p>
+    <hr>
+    <p>{{ blog.content }}</p>
+
+     
+
+{% endblock %}

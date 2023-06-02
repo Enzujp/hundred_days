@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import LanguageOrder, User, Language
-from blog.models import Blog
+from notes.models import Post
 
 # class SignupForm(UserCreationForm):
 #     email = forms.EmailField(required=True)
@@ -136,7 +136,7 @@ class LanguageForm(forms.ModelForm):
 
 class BlogForm(forms.ModelForm):
     class Meta:
-        model = Blog
+        model = Post
         fields = ('day', 'title', 'content',)
 
     widgets = {

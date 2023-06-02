@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include("userprofile.urls")),
     path('', include("languages.urls")),
     path('', include("core.urls")),
-    path('', include("blog.urls")),
+    path('', include("notes.urls")),
     path('', index, name="index"),
 
     

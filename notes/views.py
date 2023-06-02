@@ -5,19 +5,19 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 
-from .models import Blog
+from .models import Post
 from languages.forms import BlogForm
 
 @login_required
 def blogposts(request):
-    blogs = Blog.objects.filter(status=Blog.ACTIVE)
+    blogs = Post.objects.filter(status=Post.ACTIVE)
     return render(request, 'blog/blogpost.html', {
         'blogs': blogs
     })
 
 @login_required
 def blog_contents(request, id):
-    blogs = Blog.objects.filter(status=Blog.ACTIVE).get(id=id)
+    blogs = Post.objects.filter(status=Post.ACTIVE).get(id=id)
     return render(request, 'blog/contents.html', {
         'blogs': blogs,
     })
@@ -38,7 +38,7 @@ def new_blog(request):
 
 @login_required
 def edit_blog(request, id):
-    blog = Blog.objects.get(id=id)
+    blog = Post.objects.get(id=id)
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
 
@@ -57,7 +57,7 @@ def edit_blog(request, id):
 
 @login_required
 def delete_blog(request, id):
-    blog = Blog.objects.get(id=id)
+    blog = Post.objects.get(id=id)
     blog.status = blog.DELETED
     blog.save()
     messages.success(request, 'Your post has been successfully deleted')
