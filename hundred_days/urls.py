@@ -7,8 +7,8 @@ from core.views import index, about
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name="about"),
-    path('', include("userprofile.urls")),
     path('', include('notepad.urls')),
+    path('', include("userprofile.urls")),
     path('', include("languages.urls")),
     path('', include("core.urls")),
     

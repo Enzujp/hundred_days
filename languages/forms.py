@@ -59,8 +59,12 @@ class NotepadForm(forms.ModelForm):
         fields = ['title', 'slug', 'content', 'image']
         
     widgets  = {
-        'image': forms.ImageField()
+        'image': forms.ImageField(),
+        'slug': forms.TextInput(attrs={
+            'placeholder': 'type in a word or phrase without spaces between'
+        })
     }
+
 
 
 

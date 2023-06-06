@@ -336,6 +336,17 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.note-image {
+    max-width: 50%;
+    height: 50%;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.note-title {
+    color: #04010f;
+}
+
 .orders {
     margin: 10px;
 }
@@ -345,5 +356,10 @@ a:hover {
     border: 1px solid black;
     padding: 3px;
     background-color: pink;
+    margin-top: 5px;
     
+ }
+
+ .subtitle {
+    color: #04010f;
  }

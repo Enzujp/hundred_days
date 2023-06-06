@@ -4,20 +4,17 @@
 
 {% block content %}
 
-    {% if post.image %}
+    {{ note.image }}
         <figure class="image" >
-            <img src="{{ note.image.url }}">
+            <img src="{{ note.image.url }}" class="note-image">
         </figure>
-    {% endif %}
                     
         <div class="columns">
             <div class="content">
                 <h2 class="subtitle">{{ note.created_at|timesince }} ago</h1>
-                <h1 class="title">{{ note.title }}</h1>
+                <h1 class="note-title">{{ note.title }}</h1>
             <strong><p>{{ note.intro }}</p></strong>
-            <p>{{ note.body }}</p>
-            {% if request.user == note.author %}
+            <p>{{ note.content }}</p>
             <p><a href="{% url 'delete-note' note.slug %}">Delete this shit</a></p>
             <p><a href="{% url 'edit-note' note.slug %}">Edit this shit</a></p>
-            {% endif %}
 {% endblock %}

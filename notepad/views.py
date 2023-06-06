@@ -34,8 +34,8 @@ def new_notes(request):
     })
 
 
-def edit_notes(request, slug):
-    note = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).filter(slug=slug)
+def edit_note(request, slug):
+    note = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).get(slug=slug)
     if request.method == 'POST':
         form = NotepadForm(request.POST, request.FILES, instance=note)
         if form.is_valid():
@@ -51,7 +51,7 @@ def edit_notes(request, slug):
 
 
 def delete_notes(request, slug):
-    note = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).filter(slug=slug)
+    note = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).get(slug=slug)
     note.status = note.DELETED
     note.save()
     return redirect('my-notes')
