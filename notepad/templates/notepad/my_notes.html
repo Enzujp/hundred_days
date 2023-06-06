@@ -21,7 +21,6 @@
                 <h1 class="title">{{ note.title }}</h1>
             <strong><p>{{ note.intro }}</p></strong>
             </a>
-            <p><a href="{% url 'delete-note' note.slug %}" class="basic-link">Delete Note</a></p>
-            <p><a href="{% url 'edit-note' note.slug %}" class="basic-link">Edit this shit</a></p>
+           
     {% endfor %}
 {% endblock %}

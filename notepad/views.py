@@ -5,7 +5,7 @@ from languages.forms import NotepadForm
 
 def detail(request, slug):
     notes = Notepad.objects.filter(status=Notepad.ACTIVE).filter(slug=slug)
-    return render(request, 'notepad/my_notes.html', {
+    return render(request, 'notepad/detail.html', {
         'notes': notes
     })
     
