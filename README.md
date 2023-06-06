@@ -6,6 +6,6 @@ The "Language" app folder holds most of the essential files, with the "Core" app
 
 Finally, the "Userprofile" app contains usercontrol logic, allowing for signups, signin, and containing access to User accounts, where they can see their Language(s) and progress.
 
-This has been a solo project, but help is welcomed on the front-end.
+
 
 Author- JP
