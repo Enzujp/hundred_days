@@ -44,7 +44,7 @@ def edit_note(request, slug):
     else:
         form = NotepadForm(instance=note)
 
-    return render(request, 'notepad/detail.html', {
+    return render(request, 'notepad/new_notes.html', {
         'note': note,
         'form': form
     })

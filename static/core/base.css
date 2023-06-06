@@ -352,6 +352,8 @@ a:hover {
 }
 
 .blog-link {
+    display: flex;
+    gap: 10px;
     color: black;
     border: 1px solid black;
     padding: 3px;
