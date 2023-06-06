@@ -8,9 +8,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name="about"),
     path('', include("userprofile.urls")),
+    path('', include('notepad.urls')),
     path('', include("languages.urls")),
     path('', include("core.urls")),
-    path('', include("notes.urls")),
+    
+    
     path('', index, name="index"),
 
     

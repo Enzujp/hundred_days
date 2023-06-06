@@ -68,9 +68,31 @@ def get_thumbnail(self):
             else:
                 return 'https://via.placeholder.com/240x240x.jpg'
 
+class Notepad(models.Model):
+    """Class that holds a notes for users to write down progress reports and such"""
+    ACTIVE = 'Active'
+    DRAFT = 'Draft'
+    DELETED = 'Deleted'
+    
+    STATUS_CHOICES = (
+         (ACTIVE, 'Active',),
+         (DRAFT, 'Draft'),
+         (DELETED, 'Deleted',),
+    )
+    
+    
+    
+    user = models.ForeignKey(User, related_name="notepads", on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    slug = models.CharField(max_length=20, null=False)
+    content = models.TextField(max_length=1200)
+    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default=ACTIVE)
 
 
-
+    def __str__(self):
+        return self.title
 
     
 class LanguageOrder(models.Model):

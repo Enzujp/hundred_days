@@ -10,7 +10,7 @@ from languages.models import Language
 def index(request):
     languages = Language.objects.filter(status=Language.ACTIVE)[0:]
     if request.user.is_authenticated:
-        return redirect ('login_index')
+        return redirect ('home')
     else:
         return render(request, 'core/index.html', {
             'languages' : languages

@@ -1,0 +1,18 @@
+{% extends 'core/login_index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} New Post {% endblock %}
+
+{% block content %}
+<form method="post" action="." enctype="multipart/form-data" class="space-y-5">
+    {% csrf_token %}
+    
+    {{ form|crispy }}
+
+    <div class="field">
+        <div class="control">
+            <button class="button is-success">Submit Post</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
