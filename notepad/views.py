@@ -4,7 +4,7 @@ from languages.forms import NotepadForm
 # Create your views here.
 
 def detail(request, slug):
-    notes = Notepad.objects.filter(status=Notepad.ACTIVE).filter(slug=slug)
+    notes = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).filter(slug=slug)
     return render(request, 'notepad/detail.html', {
         'notes': notes
     })
@@ -50,7 +50,7 @@ def edit_note(request, slug):
     })
 
 
-def delete_notes(request, slug):
+def delete_note(request, slug):
     note = Notepad.objects.filter(user=request.user).filter(status=Notepad.ACTIVE).get(slug=slug)
     note.status = note.DELETED
     note.save()

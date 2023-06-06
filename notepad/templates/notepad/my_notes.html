@@ -1,26 +1,27 @@
-{% extends 'core/login_index.html' %}
+{% extends 'core/index.html' %}
 
 {% block title %}{{ note.title }}{% endblock %}
 
 {% block content %}
     <a href="{% url 'new-notes' %} " class="basic-link">Click here to start a new note</a>
-    {% if request.user == notepad.user %}
-        <h1 style="color:black">hallelujah</h1>
-    {% endif %}
-    {% for note in notes %}
-    {% if note.image %}
-        <figure  >
-            <img src="{{ note.image.url }}" class="lang-image">
-        </figure>
-    {% endif %}
-                    
-        <div class="columns">
-            <a href="{% url 'note-detail' note.slug %}">
-            <div class="content">
-                <h2 class="subtitle">{{ note.created_at|timesince }} ago</h1>
-                <h1 class="title">{{ note.title }}</h1>
-            <strong><p>{{ note.intro }}</p></strong>
-            </a>
-           
-    {% endfor %}
+
+    
+        {% for note in notes %}
+            {% if note.image %}
+                <figure  >
+                    <img src="{{ note.image.url }}" class="lang-image">
+                </figure>
+            {% endif %}
+                        
+            <div class="columns">
+                <a href="{% url 'note-detail' note.slug %}">
+                <div class="content">
+                    <h2 class="subtitle">{{ note.created_at|timesince }} ago</h1>
+                    <h1 class="title">{{ note.title }}</h1>
+                    <p>{{ note.content }}</p>
+                    <p><a href="{% url 'delete-note' note.slug %}" class="basic-link">Delete Note</a></p>
+                    <p><a href="{% url 'edit-note' note.slug %}" class="newlink">Edit this shit</a></p>
+                </a>
+            
+        {% endfor %}
 {% endblock %}

@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="author" content="Enzu">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{% endblock %} | 100 Days</title>
+        <title>{% block title %}Home{% endblock %} | 100 Days</title>
         <link rel="stylesheet" href="{% static 'core/base.css' %}">
         <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
     </head>
@@ -18,33 +18,33 @@
 
                 <nav>
                     <ul class="nav-links">                        
-                        {% if request.user.is_authenticated %} 
-                            <li><a href="{% url 'login_index' %}" class="liners">Home</a></li>
-                        {% else %}
+                        {% if not request.user.is_authenticated %} 
                             <li><a href="/" class="liners">Home</a></li>
-                        {% endif %}
                             <li><a href="{% url 'cart' %}" class="liners">Cart ({{cart|length}})</a></li>
-                        <li><a href="{% url 'signin' %}" class="liners">Sign-in</a></li>
-                        <li><a href="{% url 'signup' %}" class="liners">Sign-up</a></li>
-                        <li><a href="{% url 'about' %}" class="liners">About</a></li>
-                        <div class="search">
-                            <form method="get" action="/search/" class="flex items-center space-x-4 ">
-                                <input type="search" name="query" placeholder="Search..." > 
-                                <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                      </svg>                                         
-                                </button>
-                            </form>
-                        </div>
-                        {% if request.user.is_authenticated %}
-                            <li><a href="#">My Projects</a></li>
+                            <li><a href="{% url 'signin' %}" class="liners">Sign-in</a></li>
+                            <li><a href="{% url 'signup' %}" class="liners">Sign-up</a></li>
+                            <li><a href="{% url 'about' %}" class="liners">About</a></li>
+                            <div class="search">
+                                <form method="get" action="/search/" class="flex items-center space-x-4 ">
+                                    <input type="search" name="query" placeholder="Search..." > 
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                        </svg>                                         
+                                    </button>
+                                </form>
+                            
+                        {% else %}
+                            <li><a href="{% url 'index' %}" class="liners">Home</a></li>
+                            <li><a href="{% url 'my-notes' %}">My Notes</a></li>
                             <li><a href="{% url 'cart' %}">My Languages</a></li>
-                        {% endif %}
-
-                        {% if request.user.is_authenticated %}
                             <li><a href="{% url 'myaccount' %}">My Account</a></li>
-                        {% endif %}
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'logout' %}" class="logout">Logout</a></li>
+                            {% endif %}
+                      
+                        </div>
+                        
                         </ul>
                 </nav>
             </div>
