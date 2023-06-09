@@ -1,0 +1,8 @@
+{% extends 'core/index.html' %}
+
+{% block title %}{{ note.title }}{% endblock %}
+
+{% block content %}
+    {{note.title}}
+    <p>{{ note.content }}</p>
+{% endblock %}

@@ -369,3 +369,12 @@ a:hover {
  .newlink {
     margin-top: 5px;
  }
+
+ .note-content {
+    color: black;
+
+ }
+
+.hr {
+    color: white;
+}

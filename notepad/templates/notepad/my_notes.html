@@ -18,10 +18,15 @@
                 <div class="content">
                     <h2 class="subtitle">{{ note.created_at|timesince }} ago</h1>
                     <h1 class="title">{{ note.title }}</h1>
-                    <p>{{ note.content }}</p>
+                    <hr class="hr">
+                    <h3 class="note-content">{{ note.content }}</h3>
+                    <hr class="hr">
                     <p><a href="{% url 'delete-note' note.slug %}" class="basic-link">Delete Note</a></p>
-                    <p><a href="{% url 'edit-note' note.slug %}" class="newlink">Edit this shit</a></p>
+                    <hr class="hr">
+                    <p><a href="{% url 'edit-note' note.slug %}" class="basic-link">Edit this shit</a></p>
                 </a>
+                <hr>
+
             
         {% endfor %}
 {% endblock %}
