@@ -1,4 +1,4 @@
-This web application is being built to help people document and log their coding journeys- whether it be starting out as a newbie or learning a new language.
+This web application is being built to help people document and log their coding journeys- whether it be starting out as a newbie or learning a new language
 
 Hundred days of code lets you add on as many languages as you want to learn (although two at a time is the recommended quantity), and users would have a segment when logged in, where they can add notes about their progress and later on a chat segment would be added where users can communicate with each other and share ideas- or build communities.
 
