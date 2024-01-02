@@ -4,8 +4,5 @@ Hundred days of code lets you add on as many languages as you want to learn (alt
 
 The "Language" app folder holds most of the essential files, with the "Core" app containing boilerplates and structural HTML code. Within the Language app, is the Cart.py file which controls the adding, removal, and updating of Language(s) which users might want to learn.
 
-Finally, the "Userprofile" app contains usercontrol logic, allowing for signups, signin, and containing access to User accounts, where they can see their Language(s) and progress. 
 
 
-
-Author- JP
